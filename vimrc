@@ -24,11 +24,14 @@ set hidden
 set wildmenu
 set wildmode=list:longest,full
 
+set encoding=utf-8 " Necessary to show Unicode glyphs
+
 " Highlight problematic whitespace"
 set list
 set listchars=trail:.,extends:#,nbsp:.
 
 " Color
+set t_Co=256
 set background=dark
 "colorscheme ir_black
 colorscheme desert
