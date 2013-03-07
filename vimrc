@@ -139,11 +139,6 @@ endfunction
 " Additional Files
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Platform Specific Options
-if filereadable(expand("~/.vimrc.local"))
-    source ~/.vimrc.local
-endif
-
 " Plugins
 if filereadable(expand("~/.vimrc.plugins"))
     source ~/.vimrc.plugins
