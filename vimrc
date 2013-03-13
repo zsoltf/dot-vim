@@ -26,10 +26,6 @@ set wildmode=list:longest,full
 
 set encoding=utf-8 " Necessary to show Unicode glyphs
 
-" Highlight problematic whitespace"
-set list
-set listchars=trail:.,extends:#,nbsp:.
-
 " Color
 set t_Co=256
 set background=dark
@@ -140,6 +136,6 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Plugins
-if filereadable(expand("~/.vimrc.plugins"))
-    source ~/.vimrc.plugins
+if filereadable(expand("~/.vim/plugins.vim"))
+    source ~/.vim/plugins.vim
 endif
