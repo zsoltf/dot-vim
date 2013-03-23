@@ -94,7 +94,7 @@ endif
 " Aliases
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let mapleader= '<SPACE>'
+"let mapleader= ''
 
 set pastetoggle=<F12>
 
@@ -108,6 +108,7 @@ map <C-H> <C-W>h
 " Autocmd and Completion
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+set completeopt="menu"
 set completefunc=syntaxcomplete#Complete
 autocmd FileType python set completefunc=pythoncomplete#Complete
 

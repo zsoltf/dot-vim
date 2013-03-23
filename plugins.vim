@@ -18,18 +18,23 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdtree'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'vim-scripts/Colour-Sampler-Pack'
 Bundle 'Lokaltog/vim-powerline'
 
 Bundle 'kien/ctrlp.vim'
 
 Bundle 'vim-scripts/sessionman.vim'
 Bundle 'majutsushi/tagbar'
+Bundle 'taglist.vim'
 
 Bundle 'Shougo/neocomplcache'
-
 Bundle 'Shougo/neosnippet'
 
+"Bundle 'ivanov/vim-ipython'
+"Bundle 'davidhalter/jedi-vim'
 Bundle 'klen/python-mode'
+Bundle 'scrooloose/syntastic.git'
+Bundle 'ervandew/supertab'
 " Python
 filetype plugin indent on
 
