@@ -29,7 +29,6 @@ set encoding=utf-8 " Necessary to show Unicode glyphs
 " Color
 set t_Co=256
 set background=dark
-"colorscheme ir_black
 colorscheme desert
 syntax on
 filetype plugin indent on

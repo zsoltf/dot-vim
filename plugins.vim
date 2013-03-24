@@ -29,6 +29,7 @@ Bundle 'Shougo/neocomplcache'
 
 Bundle 'Shougo/neosnippet'
 
+Bundle 'lambdalisue/vim-django-support'
 Bundle 'klen/python-mode'
 " Python
 filetype plugin indent on
