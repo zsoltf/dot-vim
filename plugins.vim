@@ -35,6 +35,6 @@ Bundle 'klen/python-mode'
 filetype plugin indent on
 
 " Plugins Config
-if filereadable(expand("~/.vim/plugins.config"))
-    source ~/.vim/plugins.config
+if filereadable(expand("~/.vim/plugins_config.vim"))
+    source ~/.vim/plugins_config.vim
 endif
