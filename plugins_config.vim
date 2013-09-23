@@ -16,7 +16,7 @@ let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
 " solarized
 let g:solarized_termcolors=256
-let g:solarized_termtrans=0
+let g:solarized_termtrans=1
 call togglebg#map("<F5>")
 
 colorscheme solarized

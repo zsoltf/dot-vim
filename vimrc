@@ -93,7 +93,7 @@ endif
 " Aliases
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let mapleader= '<SPACE>'
+let mapleader= '\'
 
 set pastetoggle=<F12>
 
