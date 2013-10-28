@@ -25,7 +25,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'vim-scripts/sessionman.vim'
 Bundle 'majutsushi/tagbar'
 
-Bundle 'Shougo/neocomplcache'
+"Bundle 'Shougo/neocomplcache'
 
 Bundle 'Shougo/neosnippet'
 
@@ -44,6 +44,18 @@ Bundle "snipmate-snippets"
 
 Bundle "garbas/vim-snipmate"
 Bundle "sudar/vim-arduino-snippets"
+
+Bundle 'vim-scripts/Conque-GDB'
+Bundle 'skibyte/gdb-from-vim'
+
+"Bundle 'ervandew/supertab'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'scrooloose/syntastic'
+Bundle 'Raimondi/delimitMate'
+Bundle 'ide'
+Bundle 'DoxygenToolkit.vim'
+Bundle 'doxygen-support.vim'
+Bundle 'taglist-plus'
 
 filetype plugin indent on
 
