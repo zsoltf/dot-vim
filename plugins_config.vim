@@ -18,5 +18,15 @@ let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 call togglebg#map("<F5>")
-
 colorscheme solarized
+
+" powerline
+let g:Powerline_theme='solarized256'
+
+"html validator
+au FileType html compiler html
+au QuickFixCmdPost make cwindow
+
+" arduino
+au BufRead,BufNewFile *.pde set filetype=arduino
+au BufRead,BufNewFile *.ino set filetype=arduino

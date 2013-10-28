@@ -55,10 +55,11 @@ set softtabstop=4
 set tabstop=4
 set expandtab
 
-""set shortmess+=filmnrxoOtT
-""set ignorecase
-""set smartcase
-""set wildmenu
+"set shortmess+=filmnrxoOtT
+set shortmess=a
+set ignorecase
+set smartcase
+set wildmenu
 ""set wildmode=list:longest,full
 ""set whichwrap=b,s,h,l,<,>,[,]
 ""set scrolljump=5
@@ -95,7 +96,7 @@ endif
 
 let mapleader= '\'
 
-set pastetoggle=<F12>
+set pastetoggle=<F10>
 
 " Easier moving in tabs and windows
 map <C-J> <C-W>j

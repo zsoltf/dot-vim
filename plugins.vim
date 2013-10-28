@@ -31,7 +31,20 @@ Bundle 'Shougo/neosnippet'
 
 Bundle 'lambdalisue/vim-django-support'
 Bundle 'klen/python-mode'
-" Python
+
+Bundle 'sorin-ionescu/vim-htmlvalidator'
+
+Bundle 'tclem/vim-arduino'
+Bundle "sophacles/vim-processing"
+
+" Install snipmate dependencies:
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "snipmate-snippets"
+
+Bundle "garbas/vim-snipmate"
+Bundle "sudar/vim-arduino-snippets"
+
 filetype plugin indent on
 
 " Plugins Config
