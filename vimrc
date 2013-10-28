@@ -55,16 +55,16 @@ set softtabstop=4
 set tabstop=4
 set expandtab
 
-""set shortmess+=filmnrxoOtT
-""set ignorecase
-""set smartcase
-""set wildmenu
-""set wildmode=list:longest,full
-""set whichwrap=b,s,h,l,<,>,[,]
-""set scrolljump=5
-""set scrolloff=3
-""set foldenable
-""set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
+set shortmess+=filmnrxoOtT
+set ignorecase
+set smartcase
+set wildmenu
+set wildmode=list:longest,full
+set whichwrap=b,s,h,l,<,>,[,]
+set scrolljump=5
+set scrolloff=3
+set foldenable
+set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Status Line
@@ -83,7 +83,7 @@ if has('statusline')
     " Broken down into easily includeable segments
     set statusline=%<%f\                     " Filename
     set statusline+=%w%h%m%r                 " Options
-    "set statusline+=%{fugitive#statusline()} " Git Hotness
+    set statusline+=%{fugitive#statusline()} " Git Hotness
     set statusline+=\ [%{&ff}/%Y]            " Filetype
     set statusline+=\ [%{getcwd()}]          " Current dir
     set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
@@ -108,7 +108,9 @@ map <C-H> <C-W>h
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set completefunc=syntaxcomplete#Complete
-autocmd FileType python set completefunc=pythoncomplete#Complete
+set completeopt=menu
+setlocal omnifunc=syntaxcomplete#Complete
+"autocmd FileType python set completefunc=pythoncomplete#Complete
 
 " Remove trailing whitespaces and ^M chars
 autocmd FileType * autocmd BufWritePre <buffer> call StripTrailingWhitespace()
