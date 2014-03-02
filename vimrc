@@ -20,6 +20,8 @@ set visualbell                  "No sounds
 set t_vb=
 set autoread                    "Reload files changed outside vim
 set hidden
+set timeoutlen=50               "Timeout is annoying
+set ttimeoutlen=50
 
 set encoding=utf-8 " Necessary to show Unicode glyphs
 
