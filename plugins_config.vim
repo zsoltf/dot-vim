@@ -1,7 +1,8 @@
 " ctrl p
 let g:ctrlp_map = '<leader>o'
-let g:ctrlp_cmd = 'CtrlPLastMode'
+let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
+nnoremap <leader>p :CtrlPCmdPalette<CR>
 
 " neocomplete
 let g:neocomplete#enable_at_startup = 1
@@ -57,11 +58,6 @@ let g:used_javascript_libs = "angularjs"
 "let g:SuperTabDefaultCompletionType='<c-x><c-o><c-p>'
 "let g:SuperTabContextDefaultCompletionType='<c-x><c-o><c-p>'
 
-" color stepper
-nmap <F7> <Plug>ColorstepPrev
-nmap <F9> <Plug>ColorstepNext
-nmap <F8> <Plug>ColorstepReload
-
 " tabular
 let mapleader="\\"
 nmap <leader>a= :Tabularize /=<CR>
@@ -72,7 +68,7 @@ nmap <leader>a, :Tabularize /,\zs<CR>
 vmap <leader>a, :Tabularize /,\zs<CR>
 
 " emmet key
-let g:user_emmet_leader_key='<C-E>'
+let g:user_emmet_leader_key='<C-x>'
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
@@ -104,3 +100,13 @@ let g:session_autoload = 'yes'
 let g:session_autosave = 'yes'
 let g:session_autosave_periodic = 'yes'
 let g:session_command_aliases = 1
+
+" tagbar
+map <F6> :TagbarToggle<CR>
+
+" calendar
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
+
+" colorscheme
+colorscheme molokai

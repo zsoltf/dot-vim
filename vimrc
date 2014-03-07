@@ -20,8 +20,8 @@ set visualbell                  "No sounds
 set t_vb=
 set autoread                    "Reload files changed outside vim
 set hidden
-set timeoutlen=50               "Timeout is annoying
-set ttimeoutlen=50
+set timeoutlen=200               "Timeout is annoying
+set ttimeoutlen=200
 
 set encoding=utf-8 " Necessary to show Unicode glyphs
 
@@ -34,7 +34,7 @@ filetype plugin indent on
 
 " Search Settings
 set incsearch
-set hlsearch
+"set hlsearch toggle this with coh (unimpaired)
 set viminfo='100,f1
 
 " Backup Files
@@ -62,11 +62,11 @@ set wildmenu
 set wildmode=list:longest,full
 set wildignore+=*/tmp/*,*.so,*.swp
 set whichwrap=b,s,h,l,<,>,[,]
-set scrolljump=5
-set scrolloff=3
+set scrolljump=2
+set scrolloff=2
 set foldenable
 set foldmethod=syntax
-set foldminlines=3
+"set foldminlines=3
 set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
 set cursorline
 

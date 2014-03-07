@@ -22,6 +22,12 @@ Bundle 'tpope/vim-rbenv'
 Bundle 'tpope/vim-tbone'
 Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-jdaddy'
+Bundle 'tpope/vim-obsession'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-abolish'
 
 " f with 2 chars
 Bundle 'goldfeld/vim-seek'
@@ -30,48 +36,25 @@ Bundle 'goldfeld/vim-seek'
 Bundle 'kien/ctrlp.vim'
 Bundle 'fisadev/vim-ctrlp-cmdpalette'
 
-" html
-Bundle 'sorin-ionescu/vim-htmlvalidator'
-Bundle 'mattn/emmet-vim'
-Bundle 'gcmt/breeze.vim'
-
-" javaScript
-Bundle 'jaxbot/brolink.vim'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'othree/javascript-libraries-syntax.vim'
-Bundle 'jiangmiao/auto-pairs'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'walm/jshint.vim'
-Bundle 'jamescarr/snipmate-nodejs'
-"Bundle 'ahayman/vim-nodejs-complete'
-Bundle 'goatslacker/mango.vim'
-
-" arduino
-Bundle 'tclem/vim-arduino'
-Bundle 'sudar/vim-arduino-syntax'
-Bundle "sophacles/vim-processing"
-
-" snipmate with snippets
-"Bundle 'MarcWeber/vim-addon-mw-utils'
-"Bundle 'tomtom/tlib_vim'
-"Bundle 'snipmate-snippets'
-"Bundle 'garbas/vim-snipmate'
-"Bundle 'sudar/vim-arduino-snippets'
-"Bundle 'matthewsimo/angular-vim-snippets'
-" too many bundles just for one thing... try out neosnippet
-
 " autocompletion
 Bundle 'ervandew/supertab'
+Bundle 'SearchComplete'
 "fuzzy autocomplete needs --with-lua
 Bundle 'Shougo/neocomplete'
 Bundle 'Shougo/neosnippet'
 Bundle 'Shougo/neosnippet-snippets'
 
-" pseudo ide
+" snipmate snippets
+Bundle 'snipmate-snippets'
+Bundle 'sudar/vim-arduino-snippets'
+Bundle 'matthewsimo/angular-vim-snippets'
+
+" ide
 Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
 Bundle 'taglist-plus'
 Bundle 'scrooloose/syntastic'
+Bundle 'matchit.zip'
 " look into these
 "Bundle 'Raimondi/delimitMate'
 "Bundle 'ide'
@@ -79,7 +62,6 @@ Bundle 'scrooloose/syntastic'
 ""Bundle 'doxygen-support.vim'
 "Bundle 'vim-scripts/Conque-GDB'
 ""Bundle 'skibyte/gdb-from-vim'
-"Bundle 'Lokaltog/vim-easymotion'
 
 " align stuff
 Bundle 'dhruvasagar/vim-table-mode'
@@ -100,11 +82,6 @@ Bundle 'kshenoy/vim-origami'
 " tail files
 Bundle 'TailMinusF'
 
-" session management
-" consider using tpope's
-Bundle 'xolox/vim-session'
-Bundle 'xolox/vim-misc'
-
 " visual undo
 Bundle 'sjl/gundo.vim.git'
 
@@ -113,6 +90,32 @@ Bundle 'TTCoach'
 
 " google cal
 Bundle 'itchyny/calendar.vim'
+
+
+" languages
+
+" html
+Bundle 'sorin-ionescu/vim-htmlvalidator'
+Bundle 'mattn/emmet-vim'
+Bundle 'gcmt/breeze.vim'
+Bundle 'ap/vim-css-color'
+
+" javaScript
+Bundle 'jaxbot/brolink.vim'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'othree/javascript-libraries-syntax.vim'
+Bundle 'jiangmiao/auto-pairs'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'walm/jshint.vim'
+Bundle 'jamescarr/snipmate-nodejs'
+"Bundle 'ahayman/vim-nodejs-complete'
+Bundle 'goatslacker/mango.vim'
+
+" arduino
+Bundle 'tclem/vim-arduino'
+Bundle 'sudar/vim-arduino-syntax'
+Bundle "sophacles/vim-processing"
+
 
 filetype plugin indent on
 
