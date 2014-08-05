@@ -10,7 +10,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set nocompatible
-set number                      "Line numbers are good
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
@@ -66,7 +65,7 @@ set scrolljump=2
 set scrolloff=2
 set foldenable
 set foldmethod=syntax
-"set foldminlines=3
+set foldlevelstart=1
 set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
 set cursorline
 
@@ -142,7 +141,7 @@ autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 noexpandtab
 
 " Remove trailing whitespaces and ^M chars
-autocmd FileType * autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+"autocmd FileType * autocmd BufWritePre <buffer> call StripTrailingWhitespace()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Functions
