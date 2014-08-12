@@ -91,6 +91,10 @@ Bundle 'TTCoach'
 " google cal
 Bundle 'itchyny/calendar.vim'
 
+" gist
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
+
 
 " languages
 
