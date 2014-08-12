@@ -2,10 +2,14 @@
 let g:ctrlp_map = '<leader>o'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
+let g:ctrlp_working_path_mode = 'rc'
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
 nnoremap <leader>p :CtrlPCmdPalette<CR>
 
 " neocomplete
-let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_at_startup = 0
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#force_overwrite_completefunc = 1 " to work with rails.vim
 let g:neocomplete#sources#syntax#min_keyword_length = 3
@@ -16,7 +20,7 @@ endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
 " neosnippet
-imap <C-e>     <Plug>(neosnippet_expand_or_jump)
+"imap <C-e>     <Plug>(neosnippet_expand_or_jump)
 smap <C-e>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-e>     <Plug>(neosnippet_expand_target)
 xmap <C-l>     <Plug>(neosnippet_start_unite_snippet_target)
@@ -68,12 +72,14 @@ nmap <leader>a, :Tabularize /,\zs<CR>
 vmap <leader>a, :Tabularize /,\zs<CR>
 
 " emmet key
-let g:user_emmet_leader_key='<C-x>'
+let g:user_emmet_leader_key='<C-e>'
+let g:use_emmet_complete_tag = 1
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'murmur'
+map <F2> :AirlineToggle<CR>
 
 " gundo
 nnoremap <F5> :GundoToggle<CR>
@@ -86,23 +92,18 @@ nmap <silent> <C-L>  <Plug>GoldenViewSplit
 " " 2. quickly switch current window with the main pane
 " " and toggle back
 nmap <silent> <F8>   <Plug>GoldenViewSwitchMain
-nmap <silent> <S-F8> <Plug>GoldenViewSwitchToggle
+nmap <silent> <F9> <Plug>GoldenViewSwitchToggle
 "
 " " 3. jump to next and previous window
 nmap <silent> <C-J>  <Plug>GoldenViewNext
-nmap <silent> <C-K>  <Plug>GoldenViewPrevious"
+nmap <silent> <C-K>  <Plug>GoldenViewPrevious
 
 " nerdtree
 map <F4> :NERDTreeToggle<CR>
 
-" sessions
-let g:session_autoload = 'yes'
-let g:session_autosave = 'yes'
-let g:session_autosave_periodic = 'yes'
-let g:session_command_aliases = 1
-
 " tagbar
 map <F6> :TagbarToggle<CR>
+map <F7> :TlistToggle<CR>
 
 " calendar
 let g:calendar_google_calendar = 1
@@ -110,3 +111,16 @@ let g:calendar_google_task = 1
 
 " colorscheme
 colorscheme molokai
+
+" mathematic
+nmap <leader>k :KeyHelper<CR>
+let g:mathematic_fuzzy_match = 1
+
+" ruby
+autocmd FileType ruby nmap <buffer> <F2> <Plug>(xmpfilter-mark)
+autocmd FileType ruby xmap <buffer> <F2> <Plug>(xmpfilter-mark)
+autocmd FileType ruby imap <buffer> <F2> <Plug>(xmpfilter-mark)
+
+autocmd FileType ruby nmap <buffer> <F3> <Plug>(xmpfilter-run)
+autocmd FileType ruby xmap <buffer> <F3> <Plug>(xmpfilter-run)
+autocmd FileType ruby imap <buffer> <F3> <Plug>(xmpfilter-run)

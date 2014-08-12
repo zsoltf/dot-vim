@@ -28,6 +28,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-abolish'
+Bundle 'tpope/vim-markdown'
 
 " f with 2 chars
 Bundle 'goldfeld/vim-seek'
@@ -91,10 +92,9 @@ Bundle 'TTCoach'
 " google cal
 Bundle 'itchyny/calendar.vim'
 
-" gist
+" github gists
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
-
 
 " languages
 
@@ -102,7 +102,7 @@ Bundle 'mattn/gist-vim'
 Bundle 'sorin-ionescu/vim-htmlvalidator'
 Bundle 'mattn/emmet-vim'
 Bundle 'gcmt/breeze.vim'
-Bundle 'ap/vim-css-color'
+"Bundle 'ap/vim-css-color'
 
 " javaScript
 Bundle 'jaxbot/brolink.vim'
@@ -120,6 +120,22 @@ Bundle 'tclem/vim-arduino'
 Bundle 'sudar/vim-arduino-syntax'
 Bundle "sophacles/vim-processing"
 
+" markdown
+Bundle 'plasticboy/vim-markdown'
+Bundle 'zsoltf/vim-markdown-preview'
+
+" math
+Bundle 'Rykka/mathematic.vim'
+Bundle 'math'
+Bundle 'arecarn/crunch'
+
+" db
+Bundle 'vim-scripts/dbext.vim'
+
+" ruby
+Bundle 'danchoi/ri.vim'
+Bundle 't9md/vim-ruby-xmpfilter'
+"Bundle 'janx/vim-rubytest'
 
 filetype plugin indent on
 
