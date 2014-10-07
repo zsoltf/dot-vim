@@ -65,9 +65,25 @@ set scrolljump=2
 set scrolloff=2
 set foldenable
 set foldmethod=syntax
-set foldlevelstart=1
+set foldcolumn=3
+"set foldlevelstart=1
 set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
 set cursorline
+set winminheight=1
+
+function! NeatFoldText()
+  "let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
+  let line = substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
+  let lines_count = v:foldend - v:foldstart + 1
+  let lines_count_text = '| ' . printf("%10s", lines_count . ' lines') . ' |'
+  let foldchar = matchstr(&fillchars, 'fold:\zs.')
+  let foldtextstart = strpart(repeat(' ', v:foldlevel) . line, 0, (winwidth(0)*2)/3)
+  "let foldtextstart = strpart(line, 0, (winwidth(0)*2)/3)
+  let foldtextend = lines_count_text . repeat(foldchar, 8)
+  let foldtextlength = strlen(substitute(foldtextstart . foldtextend, '.', 'x', 'g')) + &foldcolumn
+  return foldtextstart . repeat(foldchar, winwidth(0)-foldtextlength) . foldtextend
+endfunction
+set foldtext=NeatFoldText()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Status Line
@@ -113,6 +129,9 @@ endif
 let mapleader= '\'
 
 set pastetoggle=<F10>
+
+nnoremap <space> z
+nnoremap <tab> za
 
 " Easier moving in tabs and windows
 map <C-J> <C-W>j

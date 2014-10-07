@@ -45,6 +45,21 @@ Bundle 'Shougo/neocomplete'
 Bundle 'Shougo/neosnippet'
 Bundle 'Shougo/neosnippet-snippets'
 
+" unite
+Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/unite-outline'
+Bundle 'ujihisa/unite-colorscheme'
+Bundle 'tacroe/unite-mark'
+Bundle 'thinca/vim-unite-history'
+Bundle 'ujihisa/unite-gem'
+Bundle 'tungd/unite-session'
+Bundle 'basyura/unite-rails'
+"Bundle 'ujihisa/quicklearn'
+Bundle 'mattn/unite-gist'
+Bundle 'tex/vim-unite-id'
+Bundle 'Shougo/vimproc.vim'
+Bundle 'Shougo/neomru.vim'
+
 " snipmate snippets
 Bundle 'snipmate-snippets'
 Bundle 'sudar/vim-arduino-snippets'
@@ -63,6 +78,11 @@ Bundle 'matchit.zip'
 ""Bundle 'doxygen-support.vim'
 "Bundle 'vim-scripts/Conque-GDB'
 ""Bundle 'skibyte/gdb-from-vim'
+Bundle 'xolox/vim-colorscheme-switcher'
+
+" sessions
+Bundle 'xolox/vim-session'
+Bundle 'xolox/vim-misc'
 
 " align stuff
 Bundle 'dhruvasagar/vim-table-mode'
@@ -73,9 +93,11 @@ Bundle 'sk1418/blockit'
 " color / view
 Bundle 'zhaocai/GoldenView.Vim'
 Bundle 'marklar.vim'
-Bundle 'flazz/vim-colorschemes'
+"Bundle 'flazz/vim-colorschemes'
+Bundle 'tomasr/molokai'
+Bundle 'romainl/Apprentice'
+Bundle 'jnurmine/Zenburn'
 Bundle 'kien/rainbow_parentheses.vim'
-"Bundle 'qualiabyte/vim-colorstepper'
 "Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
 Bundle 'kshenoy/vim-origami'
@@ -116,7 +138,8 @@ Bundle 'jamescarr/snipmate-nodejs'
 Bundle 'goatslacker/mango.vim'
 
 " arduino
-Bundle 'tclem/vim-arduino'
+"Bundle 'tclem/vim-arduino'
+Bundle 'jplaut/vim-arduino-ino'
 Bundle 'sudar/vim-arduino-syntax'
 Bundle "sophacles/vim-processing"
 
@@ -133,6 +156,7 @@ Bundle 'arecarn/crunch'
 Bundle 'vim-scripts/dbext.vim'
 
 " ruby
+Bundle 'vim-ruby/vim-ruby'
 Bundle 'danchoi/ri.vim'
 Bundle 't9md/vim-ruby-xmpfilter'
 "Bundle 'janx/vim-rubytest'

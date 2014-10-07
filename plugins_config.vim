@@ -1,15 +1,15 @@
 " ctrl p
-let g:ctrlp_map = '<leader>o'
+let g:ctrlp_map = '<leader>p'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
 let g:ctrlp_working_path_mode = 'rc'
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
-nnoremap <leader>p :CtrlPCmdPalette<CR>
+nnoremap <leader>o :CtrlPCmdPalette<CR>
 
 " neocomplete
-let g:neocomplete#enable_at_startup = 0
+let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#force_overwrite_completefunc = 1 " to work with rails.vim
 let g:neocomplete#sources#syntax#min_keyword_length = 3
@@ -30,6 +30,53 @@ if has('conceal')
 endif
 " Enable snipMate compatibility feature.
 " let g:neosnippet#enable_snipmate_compatibility = 1
+
+" unite
+" http://bling.github.io/blog/2013/06/02/unite-dot-vim-the-plugin-you-didnt-know-you-need/
+let g:unite_source_history_yank_enable = 1
+"nnoremap <space> :Unite -start-insert bookmark buffer file_mru file_rec/async<cr>
+nnoremap <space>p :UniteWithCurrentDir -start-insert -auto-preview file_rec/async<cr>
+nnoremap <space>f :UniteWithCurrentDir -buffer-name=files file_rec/async<CR>
+nnoremap <space>c :Unite -buffer-name=commands command <CR>
+nnoremap <space>/ :Unite grep:.<cr>
+nnoremap <space>b :Unite -quick-match buffer<cr>
+nnoremap <space>t :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
+nnoremap <space>m :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
+nnoremap <space>r :<C-u>Unite -no-split -buffer-name=registers     register<cr>
+nnoremap <space>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
+nnoremap <space>y :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
+nnoremap <space>e :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
+"call unite#custom#source('file_rec/async','sorters','sorter_rank', )
+"" replacing unite with ctrl-p
+let g:unite_data_directory='~/.vim/.cache/unite'
+let g:unite_source_history_yank_enable=1
+let g:unite_prompt='» '
+" Custom mappings for the unite buffer
+autocmd FileType unite call s:unite_settings()
+function! s:unite_settings()
+  " Play nice with supertab
+  let b:SuperTabDisabled=1
+  " Enable navigation with control-j and control-k in insert mode
+  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
+  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
+  imap <silent><buffer><expr> <C-x> unite#do_action('split')
+  imap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
+  imap <silent><buffer><expr> <C-t> unite#do_action('tabopen')
+
+  nmap <buffer> <ESC> <Plug>(unite_exit)
+endfunction
+call unite#custom#profile('default', 'context', {
+\   'start_insert': 1,
+\   'quick-match': 1,
+\   'winheight': 50,
+\   'direction': 'botright',
+\ })
+
+" sessions
+let g:session_autoload = 'yes'
+let g:session_autosave = 'yes'
 
 " solarized
 "let g:solarized_termcolors=256
@@ -78,8 +125,7 @@ let g:use_emmet_complete_tag = 1
 " airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'murmur'
-map <F2> :AirlineToggle<CR>
+let g:airline_theme = 'zenburn'
 
 " gundo
 nnoremap <F5> :GundoToggle<CR>
@@ -110,7 +156,7 @@ let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
 
 " colorscheme
-colorscheme molokai
+colorscheme apprentice
 
 " mathematic
 nmap <leader>k :KeyHelper<CR>
