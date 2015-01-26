@@ -12,11 +12,8 @@
 set nocompatible
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
-set showcmd                     "Show incomplete cmds down the bottom
 set showmode                    "Show current mode down the bottom
-set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
-set t_vb=
 set autoread                    "Reload files changed outside vim
 set hidden
 set timeoutlen=200               "Timeout is annoying
@@ -147,7 +144,7 @@ map <C-X> :w<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set completeopt=menu,longest
-"set omnifunc=syntaxcomplete#Complete
+set omnifunc=syntaxcomplete#Complete
 
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
@@ -163,7 +160,7 @@ autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 noexpandtab
 
 " Remove trailing whitespaces and ^M chars
-"autocmd FileType * autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+autocmd FileType * autocmd BufWritePre <buffer> call StripTrailingWhitespace()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Functions
@@ -186,7 +183,12 @@ endfunction
 " Additional Files
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Aliases
+if filereadable(expand("~/.vim/aliases.vim"))
+    source ~/.vim/aliases.vim
+endif
+
 " Plugins
-if filereadable(expand("~/.vim/plugins.vim"))
-    source ~/.vim/plugins.vim
+if filereadable(expand("~/.vim/plugins/plugins.vim"))
+    source ~/.vim/plugins/plugins.vim
 endif

@@ -78,11 +78,11 @@ Bundle 'matchit.zip'
 ""Bundle 'doxygen-support.vim'
 "Bundle 'vim-scripts/Conque-GDB'
 ""Bundle 'skibyte/gdb-from-vim'
-Bundle 'xolox/vim-colorscheme-switcher'
+"Bundle 'xolox/vim-colorscheme-switcher'
 
 " sessions
-Bundle 'xolox/vim-session'
-Bundle 'xolox/vim-misc'
+"Bundle 'xolox/vim-session'
+"Bundle 'xolox/vim-misc'
 
 " align stuff
 Bundle 'dhruvasagar/vim-table-mode'
@@ -144,7 +144,7 @@ Bundle 'sudar/vim-arduino-syntax'
 Bundle "sophacles/vim-processing"
 
 " markdown
-Bundle 'plasticboy/vim-markdown'
+"Bundle 'plasticboy/vim-markdown'
 Bundle 'zsoltf/vim-markdown-preview'
 
 " math
