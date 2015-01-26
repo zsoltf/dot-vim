@@ -12,6 +12,11 @@ let g:vundle_default_git_proto = 'git'
 
 Bundle 'gmarik/vundle'
 
+" matchit
+Bundle 'vim-scripts/matchit.zip'
+Bundle 'AndrewRadev/switch.vim'
+Bundle 'Lokaltog/vim-easymotion'
+
 " f with 2 chars
 Bundle 'goldfeld/vim-seek'
 
