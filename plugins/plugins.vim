@@ -57,16 +57,19 @@ Bundle 'arecarn/crunch'
 
 Bundle 'vim-scripts/dbext.vim'
 
-source ~/.vim/plugins/arduino.vim
-source ~/.vim/plugins/html.vim
-source ~/.vim/plugins/javascript.vim
-source ~/.vim/plugins/ruby.vim
+source ~/.vim/legacy/plugins.vim
+source ~/.vim/legacy/plugins_config.vim
 
-source ~/.vim/plugins/color.vim
-source ~/.vim/plugins/unite.vim
-source ~/.vim/plugins/tpope.vim
-
-source ~/.vim/plugins/plugins_config.vim
+"source ~/.vim/plugins/arduino.vim
+"source ~/.vim/plugins/html.vim
+"source ~/.vim/plugins/javascript.vim
+"source ~/.vim/plugins/ruby.vim
+"
+"source ~/.vim/plugins/color.vim
+"source ~/.vim/plugins/unite.vim
+"source ~/.vim/plugins/tpope.vim
+"
+"source ~/.vim/plugins/plugins_config.vim
 
 
 filetype plugin indent on

@@ -156,7 +156,7 @@ let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
 
 " colorscheme
-colorscheme apprentice
+colorscheme molokai
 
 " mathematic
 nmap <leader>k :KeyHelper<CR>
