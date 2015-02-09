@@ -62,11 +62,12 @@ set scrolljump=2
 set scrolloff=2
 set foldenable
 set foldmethod=syntax
-set foldcolumn=3
-"set foldlevelstart=1
+set foldcolumn=4
+set foldlevelstart=99 " open all folds
 set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
 set cursorline
 set winminheight=1
+set number
 
 function! NeatFoldText()
   "let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
