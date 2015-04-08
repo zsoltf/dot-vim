@@ -29,6 +29,7 @@ Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-ragtag'
 
 " f with 2 chars
 Bundle 'goldfeld/vim-seek'
@@ -72,7 +73,7 @@ Bundle 'taglist-plus'
 Bundle 'scrooloose/syntastic'
 Bundle 'matchit.zip'
 " look into these
-"Bundle 'Raimondi/delimitMate'
+Bundle 'Raimondi/delimitMate'
 "Bundle 'ide'
 "Bundle 'DoxygenToolkit.vim'
 ""Bundle 'doxygen-support.vim'
@@ -118,6 +119,12 @@ Bundle 'itchyny/calendar.vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 
+" text objects
+Bundle 'kana/vim-textobj-user'
+Bundle 'michaeljsmith/vim-indent-object'
+Bundle 'vim-scripts/argtextobj.vim'
+Bundle 'vim-scripts/camelcasemotion'
+
 " languages
 
 " html
@@ -160,6 +167,8 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'danchoi/ri.vim'
 Bundle 't9md/vim-ruby-xmpfilter'
 "Bundle 'janx/vim-rubytest'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'rhysd/vim-textobj-ruby'
 
 filetype plugin indent on
 

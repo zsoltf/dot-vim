@@ -6,14 +6,24 @@ let mapleader= '\'
 
 set pastetoggle=<F10>
 
-nnoremap <space> z
+"nnoremap <space> z
 nnoremap <tab> za
 
-" Easier moving in tabs and windows
-map <C-J> <C-W>j
-map <C-K> <C-W>k
-map <C-L> <C-W>l
-map <C-H> <C-W>h
+" Useful Control Key Shortcuts
 
 " Easier saving
-map <C-X> :w<CR>
+nnoremap <C-X> :w<CR>
+nnoremap <C-S> <C-X>
+
+" Q is for quickfix
+nnoremap Q :copen<CR>
+
+" <C-Q> is for close windows
+nnoremap <C-Q> :close<CR>
+
+" <C-S-l> turns into 
+" jumps out of parans while in insert mode
+" ( hello_ )
+" ( hello )_
+inoremap  <C-O>l<C-O>a
+"<C-O>a works when there are no spaces

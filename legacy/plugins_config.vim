@@ -20,7 +20,7 @@ endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
 " neosnippet
-"imap <C-e>     <Plug>(neosnippet_expand_or_jump)
+imap <C-e>     <Plug>(neosnippet_expand_or_jump)
 smap <C-e>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-e>     <Plug>(neosnippet_expand_target)
 xmap <C-l>     <Plug>(neosnippet_start_unite_snippet_target)
@@ -70,7 +70,7 @@ endfunction
 call unite#custom#profile('default', 'context', {
 \   'start_insert': 1,
 \   'quick-match': 1,
-\   'winheight': 50,
+\   'winheight': 25,
 \   'direction': 'botright',
 \ })
 
@@ -141,8 +141,8 @@ nmap <silent> <F8>   <Plug>GoldenViewSwitchMain
 nmap <silent> <F9> <Plug>GoldenViewSwitchToggle
 "
 " " 3. jump to next and previous window
-nmap <silent> <C-J>  <Plug>GoldenViewNext
-nmap <silent> <C-K>  <Plug>GoldenViewPrevious
+"nmap <silent> <C-J>  <Plug>GoldenViewNext
+"nmap <silent> <C-K>  <Plug>GoldenViewPrevious
 
 " nerdtree
 map <F4> :NERDTreeToggle<CR>
@@ -167,6 +167,8 @@ autocmd FileType ruby nmap <buffer> <F2> <Plug>(xmpfilter-mark)
 autocmd FileType ruby xmap <buffer> <F2> <Plug>(xmpfilter-mark)
 autocmd FileType ruby imap <buffer> <F2> <Plug>(xmpfilter-mark)
 
-autocmd FileType ruby nmap <buffer> <F3> <Plug>(xmpfilter-run)
-autocmd FileType ruby xmap <buffer> <F3> <Plug>(xmpfilter-run)
-autocmd FileType ruby imap <buffer> <F3> <Plug>(xmpfilter-run)
+" ragtag
+let g:ragtag_global_maps = 1
+
+" ruby textobj
+let g:textobj_ruby_more_mappings = 1
