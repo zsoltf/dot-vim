@@ -157,6 +157,10 @@ let g:calendar_google_task = 1
 
 " colorscheme
 colorscheme molokai
+" better highlight
+highlight CursorLine ctermbg=236
+highlight Visual ctermbg=236
+
 
 " mathematic
 nmap <leader>k :KeyHelper<CR>
