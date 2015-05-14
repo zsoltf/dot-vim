@@ -27,3 +27,7 @@ nnoremap <C-Q> :close<CR>
 " ( hello )_
 inoremap  <C-O>l<C-O>a
 "<C-O>a works when there are no spaces
+
+" Easier moving between buffers
+nnoremap <C-n> :bn<CR>
+nnoremap <C-p> :bp<CR>

@@ -170,6 +170,8 @@ Bundle 't9md/vim-ruby-xmpfilter'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'rhysd/vim-textobj-ruby'
 
+Bundle 'ashisha/image.vim'
+
 filetype plugin indent on
 
 " Plugins Config

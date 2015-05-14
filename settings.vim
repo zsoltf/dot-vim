@@ -43,6 +43,7 @@ set softtabstop=2
 set tabstop=2
 set expandtab
 set list listchars=tab:\ \ ,trail:·
+set fillchars+=vert:│
 
 set shortmess+=filmnrxoOtT
 set ignorecase

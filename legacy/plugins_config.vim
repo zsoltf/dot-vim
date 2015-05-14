@@ -160,6 +160,8 @@ colorscheme molokai
 " better highlight
 highlight CursorLine ctermbg=236
 highlight Visual ctermbg=236
+highlight VertSplit ctermbg=236
+highlight VertSplit ctermfg=0
 
 
 " mathematic
