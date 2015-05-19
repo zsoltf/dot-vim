@@ -135,7 +135,7 @@ Bundle 'gcmt/breeze.vim'
 
 " javaScript
 Bundle 'jaxbot/brolink.vim'
-Bundle 'terryma/vim-multiple-cursors'
+"Bundle 'terryma/vim-multiple-cursors'
 Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'digitaltoad/vim-jade'
