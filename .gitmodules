@@ -1,3 +1,4 @@
 [submodule "bundle"]
 	path = bundle
 	url = repo@falcon:vim-bundles
+	branch = master
