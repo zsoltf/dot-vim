@@ -63,3 +63,7 @@ set cursorline
 set winminheight=1
 set number
 set laststatus=2
+
+" complete 
+set completeopt=menu,longest
+set omnifunc=syntaxcomplete#Complete

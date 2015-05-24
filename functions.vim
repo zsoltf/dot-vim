@@ -3,7 +3,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Remove trailing whitespaces and ^M chars
-autocmd FileType * autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+"autocmd FileType * autocmd BufWritePre <buffer> call StripTrailingWhitespace()
 
 " Strip whitespace
 function! StripTrailingWhitespace()

@@ -31,3 +31,6 @@ inoremap  <C-O>l<C-O>a
 " Easier moving between buffers
 nnoremap <C-n> :bn<CR>
 nnoremap <C-p> :bp<CR>
+
+" Dispatch
+cnoremap D Dispatch 
