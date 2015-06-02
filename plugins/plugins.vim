@@ -78,11 +78,8 @@ Bundle 'matchit.zip'
 " look into these
 Bundle 'Raimondi/delimitMate'
 "Bundle 'ide'
-"Bundle 'DoxygenToolkit.vim'
-""Bundle 'doxygen-support.vim'
-"Bundle 'vim-scripts/Conque-GDB'
 ""Bundle 'skibyte/gdb-from-vim'
-"Bundle 'xolox/vim-colorscheme-switcher'
+Bundle 'bruno-/vim-man'
 "}}}
 
 " sessions
@@ -105,9 +102,10 @@ Bundle 'jnurmine/Zenburn'
 Bundle 'kien/rainbow_parentheses.vim'
 "Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
-Bundle 'kshenoy/vim-origami'
 Bundle 'NLKNguyen/papercolor-theme'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'Rykka/colorv.vim'
+Bundle 'ap/vim-css-color'
 "}}}
 
 " tail files
@@ -138,7 +136,6 @@ Bundle 'vim-scripts/camelcasemotion'
 Bundle 'sorin-ionescu/vim-htmlvalidator'
 Bundle 'mattn/emmet-vim'
 Bundle 'gcmt/breeze.vim'
-"Bundle 'ap/vim-css-color'
 
 " javaScript {{{
 Bundle 'jaxbot/brolink.vim'
