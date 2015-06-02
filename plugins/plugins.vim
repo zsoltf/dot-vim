@@ -41,7 +41,7 @@ Bundle 'fisadev/vim-ctrlp-cmdpalette'
 
 " autocompletion {{{
 Bundle 'ervandew/supertab'
-Bundle 'SearchComplete'
+"Bundle 'SearchComplete'
 "fuzzy autocomplete needs --with-lua
 Bundle 'Shougo/neocomplete'
 Bundle 'Shougo/neosnippet'
@@ -142,7 +142,7 @@ Bundle 'gcmt/breeze.vim'
 Bundle 'jaxbot/brolink.vim'
 "Bundle 'terryma/vim-multiple-cursors'
 Bundle 'othree/javascript-libraries-syntax.vim'
-Bundle 'jiangmiao/auto-pairs'
+"Bundle 'jiangmiao/auto-pairs'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'walm/jshint.vim'
 Bundle 'jamescarr/snipmate-nodejs'
