@@ -162,11 +162,18 @@ let g:calendar_google_task = 1
 
 " colorscheme {{{
 colorscheme molokai
+let g:indent_guides_auto_colors = 0
 " better highlight
 highlight CursorLine ctermbg=236
 highlight Visual ctermbg=236
-highlight VertSplit ctermbg=236
-highlight VertSplit ctermfg=0
+highlight VertSplit ctermbg=233 ctermfg=67 cterm=none
+highlight LineNr ctermbg=233 ctermfg=236
+highlight StatusLineNC ctermfg=67 ctermbg=233
+highlight StatusLine ctermfg=67 ctermbg=233
+highlight IndentGuidesOdd ctermbg=233
+highlight IndentGuidesEven ctermbg=0
+
+
 "}}}
 
 

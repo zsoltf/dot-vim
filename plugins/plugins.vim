@@ -106,6 +106,8 @@ Bundle 'kien/rainbow_parentheses.vim'
 "Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
 Bundle 'kshenoy/vim-origami'
+Bundle 'NLKNguyen/papercolor-theme'
+Bundle 'nathanaelkane/vim-indent-guides'
 "}}}
 
 " tail files

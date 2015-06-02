@@ -23,7 +23,7 @@ function! NeatFoldText()
   "let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
   let line = substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
   let lines_count = v:foldend - v:foldstart + 1
-  let lines_count_text = '| ' . printf("%10s", lines_count . ' lines') . ' |'
+  let lines_count_text = '┤ ' . printf("%10s", lines_count . ' lines') . ' ├'
   let foldchar = matchstr(&fillchars, 'fold:\zs.')
   let foldtextstart = strpart(repeat(' ', v:foldlevel) . line, 0, (winwidth(0)*2)/3)
   "let foldtextstart = strpart(line, 0, (winwidth(0)*2)/3)
