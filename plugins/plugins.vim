@@ -75,11 +75,12 @@ Bundle 'majutsushi/tagbar'
 Bundle 'taglist-plus'
 Bundle 'scrooloose/syntastic'
 Bundle 'matchit.zip'
-" look into these
 Bundle 'Raimondi/delimitMate'
 "Bundle 'ide'
 ""Bundle 'skibyte/gdb-from-vim'
 Bundle 'bruno-/vim-man'
+Bundle 'chrisbra/changesPlugin'
+Plugin 'airblade/vim-gitgutter'
 "}}}
 
 " sessions
@@ -105,7 +106,13 @@ Bundle 'bling/vim-airline'
 Bundle 'NLKNguyen/papercolor-theme'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Rykka/colorv.vim'
-Bundle 'ap/vim-css-color'
+"Bundle 'ap/vim-css-color'
+Bundle 'guns/xterm-color-table.vim'
+Bundle 'powerman/vim-plugin-AnsiEsc'
+Bundle 'gerw/vim-HiLinkTrace'
+Bundle 'vim-scripts/HiColors'
+Bundle 'zsoltf/vim-maui'
+Bundle 'zsoltf/vim-maui-airline'
 "}}}
 
 " tail files
@@ -116,6 +123,7 @@ Bundle 'sjl/gundo.vim.git'
 
 " touch type coach
 Bundle 'TTCoach'
+Bundle 'thanthese/Tortoise-Typing'
 
 " google cal
 Bundle 'itchyny/calendar.vim'

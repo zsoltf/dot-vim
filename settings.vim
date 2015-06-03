@@ -5,7 +5,6 @@
 set nocompatible
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
-set showmode                    "Show current mode down the bottom
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 set hidden
@@ -43,7 +42,7 @@ set softtabstop=2
 set tabstop=2
 set expandtab
 set list listchars=tab:→\ ,trail:·,extends:>,precedes:<
-set fillchars=fold:─,vert:│,stl:\ ,stlnc:\ ,diff:─
+set fillchars=fold:\ ,vert:┃,stl:\ ,stlnc:\ ,diff:─
 
 set shortmess+=filmnrxoOtT
 set ignorecase
