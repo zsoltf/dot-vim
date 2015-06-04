@@ -373,20 +373,19 @@ endif
 let g:unite_source_history_yank_enable = 1
 "nnoremap <leader> :Unite -start-insert bookmark buffer file_mru file_rec/async<cr>
 nnoremap <leader>p :UniteWithCurrentDir -start-insert -auto-preview file_rec/async<cr>
-nnoremap <leader>f :UniteWithCurrentDir -buffer-name=files file_rec/async<CR>
+nnoremap <leader>f :UniteWithBufferDir -buffer-name=files file_rec/async<CR>
 nnoremap <leader>c :Unite -buffer-name=commands command <CR>
 nnoremap <leader>/ :Unite grep:.<cr>
 nnoremap <leader>b :Unite -quick-match buffer<cr>
 nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
-nnoremap <leader>m :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
-nnoremap <leader>r :<C-u>Unite -no-split -buffer-name=registers     register<cr>
-nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
-nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
-nnoremap <leader>e :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
+nnoremap <leader>m :Unite -buffer-name=mru     -start-insert file_mru<cr>
+nnoremap <leader>r :<C-u>Unite -buffer-name=registers     register<cr>
+nnoremap <leader>o :<C-u>Unite -buffer-name=outline -start-insert outline<cr>
+nnoremap <leader>y :<C-u>Unite -buffer-name=yank    history/yank<cr>
+nnoremap <leader>g :UniteWithBufferDir -buffer-name=git    file_rec/git<cr>
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
 "call unite#custom#source('file_rec/async','sorters','sorter_rank', )
-"" replacing unite with ctrl-p
 let g:unite_data_directory='~/.vim/.cache/unite'
 let g:unite_source_history_yank_enable=1
 let g:unite_prompt='» '
@@ -403,6 +402,7 @@ function! s:unite_settings()
   imap <silent><buffer><expr> <C-t> unite#do_action('tabopen')
 
   nmap <buffer> <ESC> <Plug>(unite_exit)
+  nmap <buffer> <C-C> <Plug>(unite_exit)
 endfunction
 call unite#custom#profile('default', 'context', {
 \   'start_insert': 1,
@@ -453,6 +453,8 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline#extensions#tabline#show_close_button = 0
+let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline#extensions#tabline#buffer_min_count = 2
 "}}}
 " gundo {{{
 nnoremap <F5> :GundoToggle<CR>
