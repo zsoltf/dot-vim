@@ -223,6 +223,7 @@ Bundle 'bruno-/vim-man'
 Bundle 'chrisbra/changesPlugin'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'chrisbra/csv.vim'
+Plugin 'gregsexton/gitv'
 "}}}
 
 " sessions
@@ -255,7 +256,7 @@ Bundle 'gerw/vim-HiLinkTrace'
 Bundle 'vim-scripts/HiColors'
 Bundle 'zsoltf/vim-maui'
 Bundle 'zsoltf/vim-maui-airline'
-Bundle 'spolu/dwm.vim'
+Bundle 'zsoltf/dwm.vim'
 "}}}
 
 " tail files
@@ -382,7 +383,7 @@ nnoremap <leader>m :Unite -buffer-name=mru     -start-insert file_mru<cr>
 nnoremap <leader>r :<C-u>Unite -buffer-name=registers     register<cr>
 nnoremap <leader>o :<C-u>Unite -buffer-name=outline -start-insert outline<cr>
 nnoremap <leader>y :<C-u>Unite -buffer-name=yank    history/yank<cr>
-nnoremap <leader>g :UniteWithBufferDir -buffer-name=git    file_rec/git<cr>
+nnoremap <leader>G :UniteWithBufferDir -buffer-name=git    file_rec/git<cr>
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
 "call unite#custom#source('file_rec/async','sorters','sorter_rank', )
@@ -507,8 +508,18 @@ let g:textobj_ruby_more_mappings = 1
 let g:dwm_map_keys=1
 let g:dwm_master_pane_width="66%"
 " }}}
+" fugitive {{{
+nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>ga :Git commit --amend<CR>
+nnoremap <leader>gw :Gwrite<CR>
+nnoremap <leader>gs :Gstatus<CR>
+" }}}
 " gitgutter {{{
 let g:gitgutter_max_signs=1000
+" }}}
+" gitv {{{
+nnoremap <leader>g :Gitv<CR>
+nnoremap <leader>gg :Gitv!<CR>
 " }}}
 " }}}
 " Autocomands {{{
