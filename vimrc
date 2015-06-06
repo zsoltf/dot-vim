@@ -509,10 +509,14 @@ let g:dwm_map_keys=1
 let g:dwm_master_pane_width="66%"
 " }}}
 " fugitive {{{
-nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gc :Gcommit<CR><C-W>kC
 nnoremap <leader>ga :Git commit --amend<CR>
 nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gl :Git! log<CR>
+nnoremap <leader>gd :Gvdiff<CR>
+nnoremap <leader>g :Git 
+nnoremap <leader>G :Git! 
 " }}}
 " gitgutter {{{
 let g:gitgutter_max_signs=1000
