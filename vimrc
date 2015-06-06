@@ -518,8 +518,8 @@ nnoremap <leader>gs :Gstatus<CR>
 let g:gitgutter_max_signs=1000
 " }}}
 " gitv {{{
-nnoremap <leader>g :Gitv<CR>
-nnoremap <leader>gg :Gitv!<CR>
+nnoremap <leader>gg :Gitv<CR>
+nnoremap <leader>gf :Gitv!<CR>
 " }}}
 " }}}
 " Autocomands {{{
