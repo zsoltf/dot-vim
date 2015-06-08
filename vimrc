@@ -174,9 +174,7 @@ Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-ragtag'
 "}}}
-" f with 2 chars {{{
-Bundle 'goldfeld/vim-seek'
-" }}}
+" completion {{{
 " ultimate fuzzy finder {{{
 Bundle 'kien/ctrlp.vim'
 Bundle 'fisadev/vim-ctrlp-cmdpalette'
@@ -209,7 +207,10 @@ Bundle 'snipmate-snippets'
 Bundle 'sudar/vim-arduino-snippets'
 Bundle 'matthewsimo/angular-vim-snippets'
 " }}}
+" }}}
 " ide {{{
+Bundle 'TailMinusF'
+Bundle 'sjl/gundo.vim.git'
 Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
 Bundle 'taglist-plus'
@@ -259,12 +260,6 @@ Bundle 'zsoltf/vim-maui-airline'
 Bundle 'zsoltf/dwm.vim'
 Bundle 'ashisha/image.vim'
 "}}}
-" tail files {{{
-Bundle 'TailMinusF'
-" }}}
-" visual undo {{{
-Bundle 'sjl/gundo.vim.git'
-" }}}
 " touch type coach {{{
 Bundle 'TTCoach'
 Bundle 'thanthese/Tortoise-Typing'
@@ -282,6 +277,9 @@ Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'vim-scripts/argtextobj.vim'
 Bundle 'vim-scripts/camelcasemotion'
 Bundle 'vim-scripts/text-object-left-and-right'
+" }}}
+" f with 2 chars {{{
+Bundle 'goldfeld/vim-seek'
 " }}}
 " languages
 " html {{{
