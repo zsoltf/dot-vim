@@ -41,7 +41,7 @@ set smartindent
 set smarttab
 set shiftwidth=2
 set softtabstop=2
-set tabstop=2
+set tabstop=8
 set expandtab
 set list listchars=tab:→\ ,trail:·,extends:>,precedes:<
 set fillchars=fold:\ ,vert:┃,stl:\ ,stlnc:\ ,diff:─
@@ -66,6 +66,7 @@ set number
 set laststatus=2
 set nowrap
 set noshowmode
+let $BASH_ENV = "~/.bashrc.aliases"
 
 " complete 
 set completeopt=menu,longest
@@ -114,7 +115,7 @@ let mapleader= "\<Space>"
 set pastetoggle=<F10>
 
 "nnoremap <space> z
-nnoremap <tab> za
+"nnoremap <tab> za
 
 " Useful Control Key Shortcuts
 
@@ -224,6 +225,12 @@ Bundle 'chrisbra/changesPlugin'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'chrisbra/csv.vim'
 Plugin 'gregsexton/gitv'
+Plugin 'zweifisch/pipe2eval'
+Plugin 'vtreeexplorer'
+Plugin 'Shougo/vimfiler.vim'
+Plugin 'Shougo/vimshell.vim'
+Plugin 'wellle/tmux-complete.vim'
+Plugin 'mhinz/vim-startify'
 "}}}
 
 " sessions
@@ -281,6 +288,7 @@ Bundle 'kana/vim-textobj-user'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'vim-scripts/argtextobj.vim'
 Bundle 'vim-scripts/camelcasemotion'
+Bundle 'vim-scripts/text-object-left-and-right'
 
 " languages
 
@@ -324,7 +332,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'danchoi/ri.vim'
 Bundle 't9md/vim-ruby-xmpfilter'
 "Bundle 'janx/vim-rubytest'
-Bundle 'nelstrom/vim-textobj-rubyblock'
+"Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'rhysd/vim-textobj-ruby'
 Bundle 'ecomba/vim-ruby-refactoring'
 "}}}
@@ -380,10 +388,10 @@ nnoremap <leader>/ :Unite grep:.<cr>
 nnoremap <leader>b :Unite -quick-match buffer<cr>
 nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
 nnoremap <leader>m :Unite -buffer-name=mru     -start-insert file_mru<cr>
-nnoremap <leader>r :<C-u>Unite -buffer-name=registers     register<cr>
+nnoremap <leader><leader>r :<C-u>Unite -buffer-name=registers     register<cr>
 nnoremap <leader>o :<C-u>Unite -buffer-name=outline -start-insert outline<cr>
 nnoremap <leader>y :<C-u>Unite -buffer-name=yank    history/yank<cr>
-nnoremap <leader>G :UniteWithBufferDir -buffer-name=git    file_rec/git<cr>
+nnoremap <leader><leader>g :Unite -buffer-name=git    file_rec/git<cr>
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
 "call unite#custom#source('file_rec/async','sorters','sorter_rank', )
@@ -515,6 +523,8 @@ nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gl :Git! log<CR>
 nnoremap <leader>gd :Gvdiff<CR>
+nnoremap <leader>gd1 :Gvdiff HEAD~1<CR>
+nnoremap <leader>gd2 :Gvdiff HEAD~2<CR>
 nnoremap <leader>g :Git 
 nnoremap <leader>G :Git! 
 " }}}
@@ -524,6 +534,24 @@ let g:gitgutter_max_signs=1000
 " gitv {{{
 nnoremap <leader>gg :Gitv<CR>
 nnoremap <leader>gf :Gitv!<CR>
+" }}}
+" gitv {{{
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'startify']
+" }}}
+" startify {{{
+let g:startify_bookmarks = [ '~/.vim/vimrc' ]
+let g:startify_change_to_vcs_root = 0
+let g:startify_custom_indices = ['a', 'd', 'f', 'g', 'h', 'l']
+let g:startify_custom_header =
+      \ map(split(system('fortune | cowthink -f `ls /usr/share/cowsay/cows/ | shuf -n 1`'), '\n'), '"   ". v:val') + ['']
+hi StartifyBracket ctermfg=240
+hi StartifyFile    ctermfg=67
+hi StartifyFooter  ctermfg=240
+hi StartifyHeader  ctermfg=114
+hi StartifyNumber  ctermfg=215
+hi StartifyPath    ctermfg=245
+hi StartifySlash   ctermfg=240
+hi StartifySpecial ctermfg=240
 " }}}
 " }}}
 " Autocomands {{{
