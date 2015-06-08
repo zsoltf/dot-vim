@@ -43,8 +43,8 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=8
 set expandtab
-set list listchars=tab:→\ ,trail:·,extends:>,precedes:<
-set fillchars=fold:\ ,vert:┃,stl:\ ,stlnc:\ ,diff:─
+set list listchars=tab:→\ ,trail:·,extends:→,precedes:←
+set fillchars=fold:\ ,vert:┃,stl:\ ,stlnc:_,diff:─
 
 set shortmess+=filmnrxoOtT
 set ignorecase
