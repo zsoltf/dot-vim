@@ -264,10 +264,8 @@ Bundle 'ashisha/image.vim'
 Bundle 'TTCoach'
 Bundle 'thanthese/Tortoise-Typing'
 " }}}
-" google cal {{{
+" web {{{
 Bundle 'itchyny/calendar.vim'
-" }}}
-" github gists {{{
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 " }}}
@@ -281,7 +279,7 @@ Bundle 'vim-scripts/text-object-left-and-right'
 " f with 2 chars {{{
 Bundle 'goldfeld/vim-seek'
 " }}}
-" languages
+" languages {{{
 " html {{{
 Bundle 'sorin-ionescu/vim-htmlvalidator'
 Bundle 'mattn/emmet-vim'
@@ -324,6 +322,7 @@ Bundle 't9md/vim-ruby-xmpfilter'
 "Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'rhysd/vim-textobj-ruby'
 Bundle 'ecomba/vim-ruby-refactoring'
+"}}}
 "}}}
 
 filetype plugin indent on
@@ -540,7 +539,7 @@ hi StartifySlash   ctermfg=240
 hi StartifySpecial ctermfg=240
 " }}}
 " }}}
-" Autocomands {{{
+" Autocommands {{{
 "
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
