@@ -174,14 +174,13 @@ Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-ragtag'
 "}}}
-
-" f with 2 chars
+" f with 2 chars {{{
 Bundle 'goldfeld/vim-seek'
-
-" ultimate fuzzy finder
+" }}}
+" ultimate fuzzy finder {{{
 Bundle 'kien/ctrlp.vim'
 Bundle 'fisadev/vim-ctrlp-cmdpalette'
-
+" }}}
 " autocompletion {{{
 Bundle 'ervandew/supertab'
 "Bundle 'SearchComplete'
@@ -190,7 +189,6 @@ Bundle 'Shougo/neocomplete'
 Bundle 'Shougo/neosnippet'
 Bundle 'Shougo/neosnippet-snippets'
 "}}}
-
 " unite {{{
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/unite-outline'
@@ -206,12 +204,11 @@ Bundle 'tex/vim-unite-id'
 Bundle 'Shougo/vimproc.vim'
 Bundle 'Shougo/neomru.vim'
 "}}}
-
-" snipmate snippets
+" snipmate snippets {{{
 Bundle 'snipmate-snippets'
 Bundle 'sudar/vim-arduino-snippets'
 Bundle 'matthewsimo/angular-vim-snippets'
-
+" }}}
 " ide {{{
 Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
@@ -233,17 +230,12 @@ Plugin 'Shougo/vimshell.vim'
 Plugin 'wellle/tmux-complete.vim'
 Plugin 'mhinz/vim-startify'
 "}}}
-
-" sessions
-"Bundle 'xolox/vim-session'
-"Bundle 'xolox/vim-misc'
-
-" align stuff
+" align stuff {{{
 Bundle 'dhruvasagar/vim-table-mode'
 Bundle 'junegunn/vim-easy-align'
 Bundle 'godlygeek/tabular'
 Bundle 'sk1418/blockit'
-
+" }}}
 " color / view {{{
 "Bundle 'zhaocai/GoldenView.Vim'
 Bundle 'marklar.vim'
@@ -265,39 +257,38 @@ Bundle 'vim-scripts/HiColors'
 Bundle 'zsoltf/vim-maui'
 Bundle 'zsoltf/vim-maui-airline'
 Bundle 'zsoltf/dwm.vim'
+Bundle 'ashisha/image.vim'
 "}}}
-
-" tail files
+" tail files {{{
 Bundle 'TailMinusF'
-
-" visual undo
+" }}}
+" visual undo {{{
 Bundle 'sjl/gundo.vim.git'
-
-" touch type coach
+" }}}
+" touch type coach {{{
 Bundle 'TTCoach'
 Bundle 'thanthese/Tortoise-Typing'
-
-" google cal
+" }}}
+" google cal {{{
 Bundle 'itchyny/calendar.vim'
-
-" github gists
+" }}}
+" github gists {{{
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
-
-" text objects
+" }}}
+" text objects {{{
 Bundle 'kana/vim-textobj-user'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'vim-scripts/argtextobj.vim'
 Bundle 'vim-scripts/camelcasemotion'
 Bundle 'vim-scripts/text-object-left-and-right'
-
+" }}}
 " languages
-
-" html
+" html {{{
 Bundle 'sorin-ionescu/vim-htmlvalidator'
 Bundle 'mattn/emmet-vim'
 Bundle 'gcmt/breeze.vim'
-
+" }}}
 " javaScript {{{
 Bundle 'jaxbot/brolink.vim'
 "Bundle 'terryma/vim-multiple-cursors'
@@ -309,25 +300,24 @@ Bundle 'jamescarr/snipmate-nodejs'
 "Bundle 'ahayman/vim-nodejs-complete'
 Bundle 'goatslacker/mango.vim'
 "}}}
-
-" arduino
+" arduino {{{
 "Bundle 'tclem/vim-arduino'
 Bundle 'jplaut/vim-arduino-ino'
 Bundle 'sudar/vim-arduino-syntax'
 Bundle "sophacles/vim-processing"
-
-" markdown
+" }}}
+" markdown {{{
 "Bundle 'plasticboy/vim-markdown'
 Bundle 'zsoltf/vim-markdown-preview'
-
-" math
+" }}}
+" math {{{
 Bundle 'Rykka/mathematic.vim'
 Bundle 'math'
 Bundle 'arecarn/crunch'
-
-" db
+" }}}
+" db {{{
 Bundle 'vim-scripts/dbext.vim'
-
+" }}}
 " ruby {{{
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'danchoi/ri.vim'
@@ -337,8 +327,6 @@ Bundle 't9md/vim-ruby-xmpfilter'
 Bundle 'rhysd/vim-textobj-ruby'
 Bundle 'ecomba/vim-ruby-refactoring'
 "}}}
-
-Bundle 'ashisha/image.vim'
 
 filetype plugin indent on
 
@@ -421,10 +409,6 @@ call unite#custom#profile('default', 'context', {
 \   'direction': 'botright',
 \ })
 "}}}
-" sessions {{{
-let g:session_autoload = 'yes'
-let g:session_autosave = 'yes'
-"}}}
 "html validator {{{
 au FileType html compiler html
 au QuickFixCmdPost make cwindow
@@ -481,6 +465,7 @@ map <F7> :TlistToggle<CR>
 " calendar {{{
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
+nnoremap <leader>C :Calendar<CR>
 "}}}
 " colorscheme {{{
 colorscheme maui
@@ -538,7 +523,7 @@ let g:gitgutter_max_signs=1000
 nnoremap <leader>gg :Gitv<CR>
 nnoremap <leader>gf :Gitv!<CR>
 " }}}
-" gitv {{{
+" indent guides {{{
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'startify']
 " }}}
 " startify {{{
