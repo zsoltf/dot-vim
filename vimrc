@@ -465,6 +465,8 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline#extensions#tabline#show_close_button = 0
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#buffer_min_count = 2
+let g:airline#extensions#whitespace#trailing_format = '←@%s'
+let g:airline#extensions#whitespace#mixed_indent_format = '→@%s'
 "}}}
 " gundo {{{
 nnoremap <F5> :GundoToggle<CR>
