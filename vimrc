@@ -10,8 +10,9 @@ set history=1000                "Store lots of :cmdline history
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 set hidden
-set timeoutlen=300               "Timeout is annoying
-set ttimeoutlen=300
+set timeoutlen=400
+set ttimeoutlen=400
+set lazyredraw
 
 set encoding=utf-8 " Necessary to show Unicode glyphs
 
