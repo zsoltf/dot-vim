@@ -53,18 +53,18 @@ nnoremap <leader>Q :ccl<CR>
 - git
 
 ```
-nnoremap <leader>gc :gcommit<cr><c-w>kc
-nnoremap <leader>ga :git commit --amend<cr>
-nnoremap <leader>gw :gwrite<cr>
-nnoremap <leader>gs :gstatus<cr>
-nnoremap <leader>gl :git! log<cr>
-nnoremap <leader>gd :gvdiff<cr>
-nnoremap <leader>gd1 :gvdiff head~1<cr>
-nnoremap <leader>gd2 :gvdiff head~2<cr>
-nnoremap <leader>g :git 
-nnoremap <leader>g :git! 
-nnoremap <leader>gg :gitv<cr>
-nnoremap <leader>gf :gitv!<cr>
+nnoremap <leader>gc :Gcommit<CR><C-W>kC
+nnoremap <leader>ga :Git commit --amend<CR>
+nnoremap <leader>gw :Gwrite<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gl :Git! log<CR>
+nnoremap <leader>gd :Gvdiff<CR>
+nnoremap <leader>gd1 :Gvdiff HEAD~1<CR>
+nnoremap <leader>gd2 :Gvdiff HEAD~2<CR>
+nnoremap <leader>g :Git 
+nnoremap <leader>G :Git! 
+nnoremap <leader>gg :Gitv<CR>
+nnoremap <leader>gf :Gitv!<CR>
 ```
 
 - javascript
