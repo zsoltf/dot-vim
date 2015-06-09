@@ -538,6 +538,19 @@ hi StartifyNumber  ctermfg=215
 hi StartifyPath    ctermfg=245
 hi StartifySlash   ctermfg=240
 hi StartifySpecial ctermfg=240
+let g:startify_skiplist = [
+            \ 'COMMIT_EDITMSG',
+            \ fnamemodify($VIMRUNTIME, ':p') .'/doc',
+            \ 'bundle/.*/doc',
+            \ '\.vimgolf',
+            \ '\.git/*',
+            \ ]
+
+let g:startify_bookmarks = [
+            \ '~/.vim/vimrc',
+            \ '/data/vim/golfing',
+            \ ]
+
 " }}}
 " }}}
 " Autocomands {{{
