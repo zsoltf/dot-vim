@@ -13,43 +13,72 @@ __/\\\________/\\\_____________________________
 
 #### settings
 
-#### functions
+nocompatible and the likes
 
-#### aliases
+#### maps
+
+shortcuts that don't belong to a plugin category
+
+```
+let mapleader= "\<Space>"
+
+set pastetoggle=<F10>
+
+" Easier saving
+nnoremap <C-X> :w<CR>
+nnoremap <C-S> <C-X>
+
+" <C-Q> is for close windows
+nnoremap <C-Q> :close<CR>
+
+" Easier moving between buffers
+nnoremap <C-n> :bn<CR>
+nnoremap <C-p> :bp<CR>
+
+" Dispatch
+nnoremap <leader>d :Dispatch 
+
+" Man
+nnoremap <leader>M :Man 
+
+" quickfix and location
+nnoremap <leader>l :lopen<CR>
+nnoremap <leader>q :copen<CR>
+nnoremap <leader>Q :ccl<CR>
+```
 
 #### plugins
 
-##### general
+- ruby
+- git
 
-- tpope
-ruby (rails, bundler, rake, rbenv, endwise)
-tmux (tbone, dispatch)
-& more! (surround, unimpaired, obsession, repeat, ragtag)
-- completion
-autocomplete (tmux-complete, neocomplete)
-unite
-snippets
-- ide
-gundo, tagbar, syntastic, man, csv, changes, gitgutter, gitv, pipe2eval, vim-shell, vdebug & more
-- file
-explorers (vimfiler, vtreeexplorer, nerdtree)
-tailminusf
-- align
-table mode, tabular, easy align, blockit
-- color / view
-- touch type
-- web
-- text objects
-- f with 2 chars
+```
+nnoremap <leader>gc :gcommit<cr><c-w>kc
+nnoremap <leader>ga :git commit --amend<cr>
+nnoremap <leader>gw :gwrite<cr>
+nnoremap <leader>gs :gstatus<cr>
+nnoremap <leader>gl :git! log<cr>
+nnoremap <leader>gd :gvdiff<cr>
+nnoremap <leader>gd1 :gvdiff head~1<cr>
+nnoremap <leader>gd2 :gvdiff head~2<cr>
+nnoremap <leader>g :git 
+nnoremap <leader>g :git! 
+nnoremap <leader>gg :gitv<cr>
+nnoremap <leader>gf :gitv!<cr>
+```
 
-##### languages
-
-- html
 - javascript
+- html
 - arduino
 - markdown
 - math
-- db
-- ruby
 
-#### Autocommands
+- ide
+- completion
+- edit
+- color / view
+- web
+- utils
+- master tpope
+
+#### functions
