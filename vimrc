@@ -180,6 +180,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'fisadev/vim-ctrlp-cmdpalette'
 " }}}
 " autocompletion {{{
+Plugin 'wellle/tmux-complete.vim'
 Bundle 'ervandew/supertab'
 "Bundle 'SearchComplete'
 "fuzzy autocomplete needs --with-lua
@@ -209,9 +210,7 @@ Bundle 'matthewsimo/angular-vim-snippets'
 " }}}
 " }}}
 " ide {{{
-Bundle 'TailMinusF'
 Bundle 'sjl/gundo.vim.git'
-Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
 Bundle 'taglist-plus'
 Bundle 'scrooloose/syntastic'
@@ -221,15 +220,18 @@ Bundle 'Raimondi/delimitMate'
 ""Bundle 'skibyte/gdb-from-vim'
 Bundle 'bruno-/vim-man'
 Bundle 'chrisbra/changesPlugin'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'chrisbra/csv.vim'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'gregsexton/gitv'
 Plugin 'zweifisch/pipe2eval'
+Plugin 'Shougo/vimshell.vim'
+Plugin 'mhinz/vim-startify'
+"}}}
+" file {{{
+Bundle 'TailMinusF'
+Bundle 'scrooloose/nerdtree'
 Plugin 'vtreeexplorer'
 Plugin 'Shougo/vimfiler.vim'
-Plugin 'Shougo/vimshell.vim'
-Plugin 'wellle/tmux-complete.vim'
-Plugin 'mhinz/vim-startify'
 "}}}
 " align stuff {{{
 Bundle 'dhruvasagar/vim-table-mode'
@@ -264,10 +266,10 @@ Bundle 'ashisha/image.vim'
 Bundle 'TTCoach'
 Bundle 'thanthese/Tortoise-Typing'
 " }}}
-" google cal {{{
+" web {{{
+" google cal
 Bundle 'itchyny/calendar.vim'
-" }}}
-" github gists {{{
+" github gists
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 " }}}
@@ -277,8 +279,6 @@ Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'vim-scripts/argtextobj.vim'
 Bundle 'vim-scripts/camelcasemotion'
 Bundle 'vim-scripts/text-object-left-and-right'
-" }}}
-" f with 2 chars {{{
 Bundle 'goldfeld/vim-seek'
 " }}}
 " languages
