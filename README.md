@@ -22,9 +22,20 @@ __/\\\________/\\\_____________________________
 ##### general
 
 - tpope
+ruby (rails, bundler, rake, rbenv, endwise)
+tmux (tbone, dispatch)
+& more! (surround, unimpaired, obsession, repeat, ragtag)
 - completion
+autocomplete (tmux-complete, neocomplete)
+unite
+snippets
 - ide
+gundo, tagbar, syntastic, man, csv, changes, gitgutter, gitv, pipe2eval, vim-shell, vdebug & more
+- file
+explorers (vimfiler, vtreeexplorer, nerdtree)
+tailminusf
 - align
+table mode, tabular, easy align, blockit
 - color / view
 - touch type
 - web

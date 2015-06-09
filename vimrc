@@ -44,7 +44,7 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=8
 set expandtab
-set list listchars=tab:→\ ,trail:·,extends:→,precedes:←
+set list listchars=tab:▷\ ,trail:·,extends:→,precedes:←
 set fillchars=fold:\ ,vert:┃,stl:\ ,stlnc:_,diff:─
 
 set shortmess+=filmnrxoOtT
@@ -115,27 +115,12 @@ let mapleader= "\<Space>"
 
 set pastetoggle=<F10>
 
-"nnoremap <space> z
-"nnoremap <tab> za
-
-" Useful Control Key Shortcuts
-
 " Easier saving
 nnoremap <C-X> :w<CR>
 nnoremap <C-S> <C-X>
 
-" Q is for quickfix
-nnoremap Q :copen<CR>
-
 " <C-Q> is for close windows
 nnoremap <C-Q> :close<CR>
-
-" <C-S-l> turns into 
-" jumps out of parans while in insert mode
-" ( hello_ )
-" ( hello )_
-inoremap  <C-O>l<C-O>a
-"<C-O>a works when there are no spaces
 
 " Easier moving between buffers
 nnoremap <C-n> :bn<CR>
@@ -144,6 +129,13 @@ nnoremap <C-p> :bp<CR>
 " Dispatch
 nnoremap <leader>d :Dispatch 
 
+" Man
+nnoremap <leader>M :Man 
+
+" quickfix and location
+nnoremap <leader>l :lopen<CR>
+nnoremap <leader>q :copen<CR>
+nnoremap <leader>Q :ccl<CR>
 " }}}
 " Vimrc Plugins {{{
 "
@@ -154,6 +146,9 @@ call vundle#rc()
 let g:vundle_default_git_proto = 'git'
 
 Bundle 'gmarik/vundle'
+
+" ruby
+"
 
 " master tpope {{{
 Bundle 'tpope/vim-unimpaired'
@@ -525,7 +520,7 @@ nnoremap <leader>gg :Gitv<CR>
 nnoremap <leader>gf :Gitv!<CR>
 " }}}
 " indent guides {{{
-let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'startify']
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'startify', 'man']
 " }}}
 " startify {{{
 let g:startify_bookmarks = [ '~/.vim/vimrc' ]
@@ -555,6 +550,9 @@ let g:startify_bookmarks = [
             \ ]
 
 " }}}
+" syntastic {{{
+let g:syntastic_always_populate_loc_list = 1
+" }}}
 " }}}
 " Autocomands {{{
 "
@@ -569,6 +567,7 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
 autocmd FileType ruby,eruby let g:rubycomplete_include_object=1
 autocmd FileType ruby,eruby let g:rubycomplete_include_objectspace = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby set formatoptions-=o
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 noexpandtab
