@@ -510,7 +510,7 @@ nnoremap <leader>gl :Git! log<CR>
 nnoremap <leader>gd :Gvdiff<CR>
 nnoremap <leader>gd1 :Gvdiff HEAD~1<CR>
 nnoremap <leader>gd2 :Gvdiff HEAD~2<CR>
-nnoremap <leader>g :Git 
+nnoremap <leader>g :Dispatch git 
 nnoremap <leader>G :Git! 
 " }}}
 " gitgutter {{{
