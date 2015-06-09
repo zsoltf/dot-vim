@@ -226,6 +226,7 @@ Plugin 'gregsexton/gitv'
 Plugin 'zweifisch/pipe2eval'
 Plugin 'Shougo/vimshell.vim'
 Plugin 'mhinz/vim-startify'
+Plugin 'joonty/vdebug'
 "}}}
 " file {{{
 Bundle 'TailMinusF'
@@ -272,6 +273,8 @@ Bundle 'itchyny/calendar.vim'
 " github gists
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
+Bundle 'diepm/vim-rest-console'
+Bundle 'aquach/vim-http-client'
 " }}}
 " text objects {{{
 Bundle 'kana/vim-textobj-user'
