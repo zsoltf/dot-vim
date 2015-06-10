@@ -3,10 +3,12 @@
 "
 " Settings {{{
 "
+set shell=/bin/bash
 set nocompatible
 set timeoutlen=300
 set ttimeoutlen=4
 " view {{{
+syntax on
 set t_Co=256
 set background=dark
 set visualbell
@@ -38,7 +40,6 @@ set incsearch
 set viminfo='100,f1
 set ignorecase
 set smartcase
-let $BASH_ENV = "~/.bashrc.d/aliases.bash"
 set wildmenu
 set wildmode=list:longest,full
 set wildignore+=*/tmp/*,*.so,*.swp
@@ -96,6 +97,10 @@ nnoremap <leader>Q :ccl<CR>
 "
 filetype off
 
+" fuzzy finder
+set rtp+=~/.fzf
+
+" vundle plugin manager
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 let g:vundle_default_git_proto = 'git'
@@ -281,7 +286,7 @@ Plugin 'joonty/vdebug'
 Bundle 'vim-scripts/dbext.vim'
 "}}}
 " completion {{{
-" ultimate fuzzy finder {{{
+" ctrlp {{{
 Bundle 'kien/ctrlp.vim'
 Bundle 'fisadev/vim-ctrlp-cmdpalette'
 " }}}
@@ -352,7 +357,7 @@ endif
 let g:unite_source_history_yank_enable = 1
 "nnoremap <leader> :Unite -start-insert bookmark buffer file_mru file_rec/async<cr>
 nnoremap <leader>p :UniteWithCurrentDir -start-insert -auto-preview file_rec/async<cr>
-nnoremap <leader>f :UniteWithBufferDir -buffer-name=files file_rec/async<CR>
+nnoremap <leader>F :UniteWithBufferDir -buffer-name=files file_rec/async<CR>
 nnoremap <leader>c :Unite -buffer-name=commands command <CR>
 nnoremap <leader>/ :Unite grep:.<cr>
 nnoremap <leader>b :Unite -quick-match buffer<cr>
@@ -411,6 +416,9 @@ autocmd FileType ruby,eruby let g:rubycomplete_include_object=1
 autocmd FileType ruby,eruby let g:rubycomplete_include_objectspace = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 " }}}
+" fzf {{{
+nnoremap <leader>f :FZF<CR>
+"}}}
 " }}}
 " edit {{{
 " align
