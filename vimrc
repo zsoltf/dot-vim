@@ -93,8 +93,11 @@ nnoremap <leader>l :lopen<CR>
 nnoremap <leader>q :copen<CR>
 nnoremap <leader>Q :ccl<CR>
 
-" opens  command line window in insert mode
-nnoremap <leader>; q:i
+" command line window
+nnoremap <leader>; q:
+
+" focus fold (close other folds around current fold)
+nnoremap <leader>z zMzozozozozozozozo
 
 " }}}
 " Plugins {{{
