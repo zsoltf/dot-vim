@@ -92,6 +92,10 @@ nnoremap <leader>M :Man
 nnoremap <leader>l :lopen<CR>
 nnoremap <leader>q :copen<CR>
 nnoremap <leader>Q :ccl<CR>
+
+" opens  command line window in insert mode
+nnoremap <leader>; q:i
+
 " }}}
 " Plugins {{{
 "
