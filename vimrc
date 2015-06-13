@@ -96,8 +96,11 @@ nnoremap <leader>Q :ccl<CR>
 " command line window
 nnoremap <leader>; q:
 
-" focus fold (close other folds around current fold)
+" focus fold (opens current fold and closes folds around it)
 nnoremap <leader>z zMzozozozozozozozo
+
+" open all folds under current fold
+nnoremap <leader>Z zazA
 
 " }}}
 " Plugins {{{
