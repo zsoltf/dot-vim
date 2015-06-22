@@ -237,12 +237,15 @@ map <F4> :NERDTreeToggle<CR>
 "}}}
 Plugin 'vtreeexplorer'
 Plugin 'Shougo/vimfiler.vim'
+Plugin 'lpenz/vimcommander'
+noremap <silent> <F11> :cal VimCommanderToggle()<CR>
 "}}}
 " gundo {{{
 Bundle 'sjl/gundo.vim.git'
 nnoremap <F5> :GundoToggle<CR>
 "}}}
 " tagbar {{{
+Bundle "wesleyche/SrcExpl"
 Bundle 'majutsushi/tagbar'
 map <F6> :TagbarToggle<CR>
 map <F7> :TlistToggle<CR>
@@ -323,6 +326,7 @@ Bundle 'mattn/unite-gist'
 Bundle 'tex/vim-unite-id'
 Bundle 'Shougo/vimproc.vim'
 Bundle 'Shougo/neomru.vim'
+Bundle 'tsukkee/unite-tag'
 "}}}
 " snipmate snippets {{{
 Bundle 'snipmate-snippets'
@@ -366,12 +370,13 @@ endif
 " http://bling.github.io/blog/2013/06/02/unite-dot-vim-the-plugin-you-didnt-know-you-need/
 let g:unite_source_history_yank_enable = 1
 "nnoremap <leader> :Unite -start-insert bookmark buffer file_mru file_rec/async<cr>
-nnoremap <leader>p :UniteWithCurrentDir -start-insert -auto-preview file_rec/async<cr>
+nnoremap <leader><leader>p :UniteWithCurrentDir -start-insert -auto-preview file_rec/async<cr>
 nnoremap <leader>F :UniteWithBufferDir -buffer-name=files file_rec/async<CR>
 nnoremap <leader>c :Unite -buffer-name=commands command <CR>
 nnoremap <leader>/ :Unite grep:.<cr>
 nnoremap <leader>b :Unite -quick-match buffer<cr>
-nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
+nnoremap <leader>t :<C-u>Unite -buffer-name=tags   -start-insert tag<cr>
+nnoremap <leader>T :<C-u>Unite -buffer-name=included -start-insert tag/include<cr>
 nnoremap <leader>m :Unite -buffer-name=mru     -start-insert file_mru<cr>
 nnoremap <leader><leader>r :<C-u>Unite -buffer-name=registers     register<cr>
 nnoremap <leader>o :<C-u>Unite -buffer-name=outline -start-insert outline<cr>
