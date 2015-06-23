@@ -90,14 +90,14 @@ nnoremap <leader>M :Man
 
 " quickfix and location
 nnoremap <leader>l :lopen<CR>
-nnoremap <leader>q :copen<CR>
+nnoremap <leader>q :Copen<CR>
 nnoremap <leader>Q :ccl<CR>
 
 " command line window
 nnoremap <leader>; q:
 
 " focus fold (opens current fold and closes folds around it)
-nnoremap <leader>z zMzozozozozozozozo
+nnoremap <leader>z zMzozozozozozozozozz
 
 " open all folds under current fold
 nnoremap <leader>Z zazA
@@ -231,11 +231,8 @@ let g:mathematic_fuzzy_match = 1
 " ide {{{
 " file {{{
 Bundle 'TailMinusF'
-" nerdtree {{{
-Bundle 'scrooloose/nerdtree'
-map <F4> :NERDTreeToggle<CR>
-"}}}
 Plugin 'vtreeexplorer'
+Plugin 'Shougo/neossh.vim'
 Plugin 'Shougo/vimfiler.vim'
 Plugin 'lpenz/vimcommander'
 noremap <silent> <F11> :cal VimCommanderToggle()<CR>
@@ -279,10 +276,15 @@ let g:startify_bookmarks = [
 
 " }}}
 " syntastic {{{
+Bundle 'scrooloose/syntastic'
 let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_jump = 3
+"let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_warning_symbol = "⚠"
 " }}}
 Bundle 'taglist-plus'
-Bundle 'scrooloose/syntastic'
 Bundle 'matchit.zip'
 Bundle 'Raimondi/delimitMate'
 "Bundle 'ide'
@@ -297,6 +299,7 @@ Plugin 'Shougo/vimshell.vim'
 Plugin 'mhinz/vim-startify'
 Plugin 'joonty/vdebug'
 Bundle 'vim-scripts/dbext.vim'
+Bundle 'utl.vim'
 "}}}
 " completion {{{
 " ctrlp {{{
@@ -377,7 +380,7 @@ nnoremap <leader>/ :Unite grep:.<cr>
 nnoremap <leader>b :Unite -quick-match buffer<cr>
 nnoremap <leader>t :<C-u>Unite -buffer-name=tags   -start-insert tag<cr>
 nnoremap <leader>T :<C-u>Unite -buffer-name=included -start-insert tag/include<cr>
-nnoremap <leader>m :Unite -buffer-name=mru     -start-insert file_mru<cr>
+nnoremap <leader>m :Unite -buffer-name=mru -start-insert file_mru<cr>
 nnoremap <leader><leader>r :<C-u>Unite -buffer-name=registers     register<cr>
 nnoremap <leader>o :<C-u>Unite -buffer-name=outline -start-insert outline<cr>
 nnoremap <leader>y :<C-u>Unite -buffer-name=yank    history/yank<cr>
