@@ -172,8 +172,8 @@ nnoremap <leader>gl :Git! log<CR>
 nnoremap <leader>gd :Gvdiff<CR>
 nnoremap <leader>gd1 :Gvdiff HEAD~1<CR>
 nnoremap <leader>gd2 :Gvdiff HEAD~2<CR>
-nnoremap <leader>g :Git 
-nnoremap <leader>G :Git! 
+nnoremap <leader>g :Git! 
+nnoremap <leader>G :Git 
 " }}}
 " gitgutter {{{
 let g:gitgutter_max_signs=1000
@@ -390,6 +390,7 @@ endif
 " http://bling.github.io/blog/2013/06/02/unite-dot-vim-the-plugin-you-didnt-know-you-need/
 let g:unite_source_history_yank_enable = 1
 "nnoremap <leader> :Unite -start-insert bookmark buffer file_mru file_rec/async<cr>
+nnoremap <leader><leader> :Unite<CR>
 nnoremap <leader><leader>p :UniteWithCurrentDir -start-insert -auto-preview file_rec/async<cr>
 nnoremap <leader>F :UniteWithBufferDir -buffer-name=files file_rec/async<CR>
 nnoremap <leader>c :Unite -buffer-name=commands command <CR>
@@ -398,7 +399,7 @@ nnoremap <leader>b :Unite -quick-match buffer<cr>
 nnoremap <leader>t :<C-u>Unite -buffer-name=tags   -start-insert tag<cr>
 nnoremap <leader>T :<C-u>Unite -buffer-name=included -start-insert tag/include<cr>
 nnoremap <leader>m :Unite -buffer-name=mru -start-insert file_mru<cr>
-nnoremap <leader><leader>r :<C-u>Unite -buffer-name=registers     register<cr>
+nnoremap <leader>R :<C-u>Unite -buffer-name=registers     register<cr>
 nnoremap <leader>o :<C-u>Unite -buffer-name=outline -start-insert outline<cr>
 nnoremap <leader>y :<C-u>Unite -buffer-name=yank    history/yank<cr>
 nnoremap <leader><leader>g :Unite -buffer-name=git    file_rec/git<cr>
