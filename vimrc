@@ -33,6 +33,12 @@ set laststatus=2
 set nowrap
 set noshowmode
 set whichwrap=b,s,h,l,<,>,[,]
+set equalalways
+" mintty mode-dependent cursor
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
 " }}}
 " complete/search {{{
 set backspace=indent,eol,start
@@ -102,6 +108,11 @@ nnoremap <leader>z zMzozozozozozozozozz
 " open all folds under current fold
 nnoremap <leader>Z zazA
 
+nnoremap <leader>n :Tmux selectp -D<CR>
+
+nnoremap <C-W>s Hmx`` \|:split<CR>`xzt``
+
+nnoremap <C-c> <silent> <C-c>
 " }}}
 " Plugins {{{
 "
@@ -227,6 +238,9 @@ nmap <leader>v :KeyHelper<CR>
 let g:mathematic_fuzzy_match = 1
 "}}}
 " }}}
+" tmux {{{
+Bundle 'pearance/vim-tmux'
+" }}}
 "
 " ide {{{
 " file {{{
@@ -234,6 +248,7 @@ Bundle 'TailMinusF'
 Plugin 'vtreeexplorer'
 Plugin 'Shougo/neossh.vim'
 Plugin 'Shougo/vimfiler.vim'
+Plugin 'joedicastro/DirDiff.vim'
 Plugin 'lpenz/vimcommander'
 noremap <silent> <F11> :cal VimCommanderToggle()<CR>
 "}}}
@@ -248,7 +263,6 @@ map <F6> :TagbarToggle<CR>
 map <F7> :TlistToggle<CR>
 "}}}
 " startify {{{
-let g:startify_bookmarks = [ '~/.vim/vimrc' ]
 let g:startify_change_to_vcs_root = 0
 let g:startify_custom_indices = ['a', 'd', 'f', 'g', 'h', 'l']
 let g:startify_custom_header =
@@ -330,6 +344,9 @@ Bundle 'tex/vim-unite-id'
 Bundle 'Shougo/vimproc.vim'
 Bundle 'Shougo/neomru.vim'
 Bundle 'tsukkee/unite-tag'
+Bundle 'tsukkee/unite-help'
+Bundle 'osyo-manga/unite-quickfix'
+Bundle 'osyo-manga/unite-fold'
 "}}}
 " snipmate snippets {{{
 Bundle 'snipmate-snippets'
@@ -448,7 +465,6 @@ Bundle 'sk1418/blockit'
 Bundle 'kana/vim-textobj-user'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'vim-scripts/argtextobj.vim'
-Bundle 'vim-scripts/camelcasemotion'
 Bundle 'vim-scripts/text-object-left-and-right'
 Bundle 'goldfeld/vim-seek'
 " tabular {{{
@@ -483,6 +499,7 @@ Bundle 'zsoltf/vim-maui'
 Bundle 'zsoltf/vim-maui-airline'
 Bundle 'zsoltf/dwm.vim'
 Bundle 'ashisha/image.vim'
+Bundle 'kshenoy/vim-signature'
 
 colorscheme maui
 
@@ -538,6 +555,7 @@ Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-ragtag'
+Bundle 'tpope/vim-scriptease'
 "}}}
 
 filetype plugin indent on
