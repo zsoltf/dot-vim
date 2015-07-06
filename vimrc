@@ -82,11 +82,11 @@ nnoremap <C-X> :w<CR>
 nnoremap <C-S> <C-X>
 
 " <C-Q> is for close windows
-nnoremap <C-Q> :close<CR>
+nnoremap <silent> <C-Q> :close<CR>
 
 " Easier moving between buffers
-nnoremap <C-n> :bn<CR>
-nnoremap <C-p> :bp<CR>
+nnoremap <silent> <C-n> :bn<CR>
+nnoremap <silent> <C-p> :bp<CR>
 
 " Dispatch
 nnoremap <leader>d :Dispatch 
@@ -95,24 +95,24 @@ nnoremap <leader>d :Dispatch
 nnoremap <leader>M :Man 
 
 " quickfix and location
-nnoremap <leader>l :lopen<CR>
-nnoremap <leader>q :Copen<CR>
-nnoremap <leader>Q :ccl<CR>
+nnoremap <silent> <leader>l :lopen<CR>
+nnoremap <silent> <leader>q :Copen<CR>
+nnoremap <silent> <leader>Q :ccl<CR>
 
 " command line window
 nnoremap <leader>; q:
 
 " focus fold (opens current fold and closes folds around it)
-nnoremap <leader>z zMzozozozozozozozozz
+nnoremap <silent> <leader>z :silent! normal! zMzozozozozozozozozz<CR>
 
 " open all folds under current fold
-nnoremap <leader>Z zazA
+nnoremap <silent> <leader>Z zazAzt
 
-nnoremap <leader>n :Tmux selectp -D<CR>
+nnoremap <silent> <leader>n :Tmux selectp -D<CR>
 
-nnoremap <C-W>s Hmx`` \|:split<CR>`xzt``
+nnoremap <silent> <C-W>s Hmx`` \|:split<CR>`xzt``
 
-nnoremap <C-c> <silent> <C-c>
+nnoremap <silent> <C-c> <Esc>
 " }}}
 " Plugins {{{
 "
@@ -282,12 +282,6 @@ let g:startify_skiplist = [
             \ '\.vimgolf',
             \ '\.git/*',
             \ ]
-
-let g:startify_bookmarks = [
-            \ '~/.vim/vimrc',
-            \ '/data/vim/golfing',
-            \ ]
-
 " }}}
 " syntastic {{{
 Bundle 'scrooloose/syntastic'
@@ -304,7 +298,7 @@ Bundle 'Raimondi/delimitMate'
 "Bundle 'ide'
 ""Bundle 'skibyte/gdb-from-vim'
 Bundle 'bruno-/vim-man'
-Bundle 'chrisbra/changesPlugin'
+"Bundle 'chrisbra/changesPlugin'
 Plugin 'chrisbra/csv.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'gregsexton/gitv'
@@ -565,7 +559,7 @@ filetype plugin indent on
 " Functions {{{
 "
 
-" Strip whitespace
+" Strip whitespace {{{
 function! StripTrailingWhitespace()
     " Preparation: save last search, and cursor position.
     let _s=@/
@@ -579,7 +573,9 @@ function! StripTrailingWhitespace()
 endfunction
 
 "autocmd FileType * autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+"}}}
 
+" Fold Text {{{
 function! NeatFoldText()
   "let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
   let line = substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
@@ -593,6 +589,7 @@ function! NeatFoldText()
   return foldtextstart . repeat(foldchar, winwidth(0)-foldtextlength) . foldtextend
 endfunction
 set foldtext=NeatFoldText()
+" }}}
 
 " }}}
 " vim: fdm=marker
