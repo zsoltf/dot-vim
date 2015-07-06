@@ -591,5 +591,23 @@ endfunction
 set foldtext=NeatFoldText()
 " }}}
 
+" HTML Preview {{{
+" inspired by http://vim.wikia.com/wiki/Preview_current_HTML_file
+function! ViewHtmlText(url)
+  if !empty(a:url)
+    silent! new
+    silent! wincmd o
+    silent! IndentGuidesDisable
+    setlocal buftype=nofile bufhidden=hide noswapfile nolist nonumber
+    nnoremap <buffer> <silent> q :bd!<CR>
+    silent! execute 'Read elinks -dump-width ' . winwidth(0) . ' -dump ' . a:url
+  endif
+endfunction
+" Save and view text for current html file.
+nnoremap <Leader>H :update<Bar>call ViewHtmlText(expand('%:p'))<CR>
+" View text for visually selected url.
+vnoremap <Leader>h y:call ViewHtmlText(@@)<CR>
+" }}}
+
 " }}}
 " vim: fdm=marker
