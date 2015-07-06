@@ -16,7 +16,7 @@ set autoread
 set hidden
 set lazyredraw
 set encoding=utf-8
-set list listchars=tab:▷\ ,trail:·,extends:→,precedes:←
+set list listchars=tab:∘\ ,trail:∙,extends:→,precedes:←
 set fillchars=fold:\ ,vert:┃,stl:\ ,stlnc:_,diff:─
 set shortmess+=filmnrxoOtT
 set scrolljump=2
@@ -39,6 +39,10 @@ let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
+" true color
+let &t_8f="\e[38;2;%ld;%ld;%ldm"
+let &t_8b="\e[48;2;%ld;%ld;%ldm"
+set guicolors
 " }}}
 " complete/search {{{
 set backspace=indent,eol,start
