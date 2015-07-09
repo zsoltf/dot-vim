@@ -575,15 +575,15 @@ filetype plugin indent on
 
 " Strip whitespace {{{
 function! StripTrailingWhitespace()
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " do the business:
-    %s/\s\+$//e
-    " clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " do the business:
+  %s/\s\+$//e
+  " clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
 endfunction
 
 "autocmd FileType * autocmd BufWritePre <buffer> call StripTrailingWhitespace()
@@ -607,20 +607,28 @@ endfunction
 
 " HTML Preview {{{
 " inspired by http://vim.wikia.com/wiki/Preview_current_HTML_file
-function! ViewHtmlText(url)
+function! ViewHtmlText(url, view)
   if !empty(a:url)
-    silent! new
-    silent! wincmd o
-    silent! IndentGuidesDisable
-    setlocal buftype=nofile bufhidden=hide noswapfile nolist nonumber
-    nnoremap <buffer> <silent> q :bd!<CR>
-    silent! execute 'Read elinks -dump-width ' . winwidth(0) . ' -dump ' . a:url
+    if a:view ==# 'view'
+      silent! execute 'Dispatch elinks ' . a:url
+      silent! execute 'Tmux next-layout'
+      silent! execute 'Tmux next-layout'
+    else
+      silent! new
+      silent! wincmd o
+      silent! IndentGuidesDisable
+      setlocal buftype=nofile bufhidden=hide noswapfile nolist nonumber
+      nnoremap <buffer> <silent> q :bd!<CR>
+      silent! execute 'Read elinks -dump-width ' . winwidth(0) . ' -dump ' . a:url
+    endif
   endif
 endfunction
 " Save and view text for current html file.
-nnoremap <Leader>H :update<Bar>call ViewHtmlText(expand('%:p'))<CR>
+"nnoremap <Leader>H :update<Bar>call ViewHtmlText(expand('%:p'))<CR>
 " View text for visually selected url.
-vnoremap <Leader>h y:call ViewHtmlText(@@)<CR>
+vnoremap <Leader>H y:call ViewHtmlText(@@, "read")<CR>
+" Open elinks for the selected url in a tmux pane
+vnoremap <Leader>h y:call ViewHtmlText(@@, "view")<CR>
 " }}}
 
 " }}}
