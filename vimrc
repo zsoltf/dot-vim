@@ -34,15 +34,17 @@ set nowrap
 set noshowmode
 set whichwrap=b,s,h,l,<,>,[,]
 set equalalways
+if has('termtruecolor')
+  let &t_8f="\e[38;2;%ld;%ld;%ldm"
+  let &t_8b="\e[48;2;%ld;%ld;%ldm"
+  set guicolors
+  set mouse=a
+endif
 " mintty mode-dependent cursor
 let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
-" true color
-let &t_8f="\e[38;2;%ld;%ld;%ldm"
-let &t_8b="\e[48;2;%ld;%ld;%ldm"
-set guicolors
 " }}}
 " complete/search {{{
 set backspace=indent,eol,start
@@ -141,6 +143,8 @@ Bundle 'tpope/vim-rbenv'
 Bundle 'tpope/vim-endwise'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'danchoi/ri.vim'
+nnoremap <LocalLeader>r :call ri#OpenSearchPrompt(1)<CR>
+nnoremap <LocalLeader>k :call ri#LookupNameUnderCursor()<CR>
 Bundle 't9md/vim-ruby-xmpfilter'
 "Bundle 'janx/vim-rubytest'
 "Bundle 'nelstrom/vim-textobj-rubyblock'
@@ -245,6 +249,9 @@ let g:mathematic_fuzzy_match = 1
 " tmux {{{
 Bundle 'pearance/vim-tmux'
 " }}}
+" go {{{
+Bundle 'fatih/vim-go'
+" }}}
 "
 " ide {{{
 " file {{{
@@ -301,12 +308,13 @@ Bundle 'matchit.zip'
 Bundle 'Raimondi/delimitMate'
 "Bundle 'ide'
 ""Bundle 'skibyte/gdb-from-vim'
+Bundle 'yuratomo/dbg.vim'
 Bundle 'bruno-/vim-man'
 "Bundle 'chrisbra/changesPlugin'
 Plugin 'chrisbra/csv.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'gregsexton/gitv'
-Plugin 'zweifisch/pipe2eval'
+"Plugin 'zweifisch/pipe2eval'
 Plugin 'Shougo/vimshell.vim'
 Plugin 'mhinz/vim-startify'
 Plugin 'joonty/vdebug'
@@ -388,7 +396,7 @@ endif
 " http://bling.github.io/blog/2013/06/02/unite-dot-vim-the-plugin-you-didnt-know-you-need/
 let g:unite_source_history_yank_enable = 1
 "nnoremap <leader> :Unite -start-insert bookmark buffer file_mru file_rec/async<cr>
-nnoremap <leader><leader> :Unite<CR>
+nnoremap <leader><CR> :Unite<CR>
 nnoremap <leader><leader>p :UniteWithCurrentDir -start-insert -auto-preview file_rec/async<cr>
 nnoremap <leader>F :UniteWithBufferDir -buffer-name=files file_rec/async<CR>
 nnoremap <leader>c :Unite -buffer-name=commands command <CR>
@@ -397,7 +405,7 @@ nnoremap <leader>b :Unite -quick-match buffer<cr>
 nnoremap <leader>t :<C-u>Unite -buffer-name=tags   -start-insert tag<cr>
 nnoremap <leader>T :<C-u>Unite -buffer-name=included -start-insert tag/include<cr>
 nnoremap <leader>m :Unite -buffer-name=mru -start-insert file_mru<cr>
-nnoremap <leader>R :<C-u>Unite -buffer-name=registers     register<cr>
+nnoremap <leader>r :<C-u>Unite -buffer-name=registers     register<cr>
 nnoremap <leader>o :<C-u>Unite -buffer-name=outline -start-insert outline<cr>
 nnoremap <leader>y :<C-u>Unite -buffer-name=yank    history/yank<cr>
 nnoremap <leader><leader>g :Unite -buffer-name=git    file_rec/git<cr>
@@ -506,9 +514,11 @@ colorscheme maui
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'startify', 'man']
+let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 2
 " }}}
 " dwm.vim {{{
-let g:dwm_map_keys=1
+let g:dwm_map_keys=0
 let g:dwm_master_pane_width="66%"
 " }}}
 " airline {{{
@@ -592,7 +602,7 @@ function! NeatFoldText()
   let foldtextlength = strlen(substitute(foldtextstart . foldtextend, '.', 'x', 'g')) + &foldcolumn
   return foldtextstart . repeat(foldchar, winwidth(0)-foldtextlength) . foldtextend
 endfunction
-set foldtext=NeatFoldText()
+"set foldtext=NeatFoldText()
 " }}}
 
 " HTML Preview {{{
