@@ -114,7 +114,7 @@ nnoremap <silent> <leader>z :silent! normal! zMzozozozozozozozozz<CR>
 " open all folds under current fold
 nnoremap <silent> <leader>Z zazAzt
 
-nnoremap <silent> <leader>n :Tmux selectp -D<CR>
+nnoremap <silent> <leader>n :Tmux select-pane -t .+<CR>
 
 nnoremap <silent> <C-W>s Hmx`` \|:split<CR>`xzt``
 
@@ -483,6 +483,7 @@ vmap <leader>a: :Tabularize /:\zs<CR>
 nmap <leader>a, :Tabularize /,\zs<CR>
 vmap <leader>a, :Tabularize /,\zs<CR>
 "}}}
+Bundle 'mtth/scratch.vim'
 " }}}
 " color / view {{{
 "Bundle 'zhaocai/GoldenView.Vim'
@@ -611,8 +612,7 @@ function! ViewHtmlText(url, view)
   if !empty(a:url)
     if a:view ==# 'view'
       silent! execute 'Dispatch elinks ' . a:url
-      silent! execute 'Tmux next-layout'
-      silent! execute 'Tmux next-layout'
+      silent! execute 'Tmux select-layout even-horizontal'
     else
       silent! new
       silent! wincmd o
