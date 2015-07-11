@@ -267,7 +267,7 @@ noremap <silent> <F11> :cal VimCommanderToggle()<CR>
 "}}}
 " gundo {{{
 Bundle 'sjl/gundo.vim.git'
-nnoremap <F5> :GundoToggle<CR>
+nnoremap <leader>u :GundoToggle<CR>
 "}}}
 " tagbar {{{
 Bundle "wesleyche/SrcExpl"
