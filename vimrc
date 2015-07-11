@@ -119,6 +119,8 @@ nnoremap <silent> <leader>n :Tmux select-pane -t .+<CR>
 nnoremap <silent> <C-W>s Hmx`` \|:split<CR>`xzt``
 
 nnoremap <silent> <C-c> <Esc>
+
+nnoremap <silent> <C-k> :bd!<CR>
 " }}}
 " Plugins {{{
 "
