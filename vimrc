@@ -216,7 +216,7 @@ Bundle 'gcmt/breeze.vim'
 let g:ragtag_global_maps = 1
 "}}}
 " emmet key {{{
-let g:user_emmet_leader_key='<C-e>'
+let g:user_emmet_leader_key='<C-t>'
 let g:use_emmet_complete_tag = 1
 "}}}
 "html validator {{{
@@ -383,9 +383,9 @@ endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 "}}}
 " neosnippet {{{
-imap <C-e>     <Plug>(neosnippet_expand_or_jump)
-smap <C-e>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-e>     <Plug>(neosnippet_expand_target)
+imap <C-l>     <Plug>(neosnippet_expand_or_jump)
+smap <C-l>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-l>     <Plug>(neosnippet_expand_target)
 xmap <C-l>     <Plug>(neosnippet_start_unite_snippet_target)
 " For snippet_complete marker.
 if has('conceal')
