@@ -123,6 +123,8 @@ nnoremap <silent> <C-c> <Esc>
 nnoremap <silent> <C-k> :bd!<CR>
 
 nnoremap <silent> <Leader>a :Ack 
+
+nnoremap <Leader>sr :SyntasticCheck rubocop<CR>
 " }}}
 " Plugins {{{
 "
@@ -314,7 +316,7 @@ let g:syntastic_warning_symbol = "ω"
 let g:syntastic_style_error_symbol = "ε"
 let g:syntastic_style_warning_symbol = "ψ"
 let g:syntastic_aggregate_errors = 1
-let g:syntastic_ruby_checkers = ["mri", "rubocop"]
+let g:syntastic_ruby_checkers = ["mri"]
 " }}}
 Bundle 'taglist-plus'
 Bundle 'matchit.zip'
