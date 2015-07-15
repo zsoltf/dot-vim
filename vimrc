@@ -121,6 +121,8 @@ nnoremap <silent> <C-W>s Hmx`` \|:split<CR>`xzt``
 nnoremap <silent> <C-c> <Esc>
 
 nnoremap <silent> <C-k> :bd!<CR>
+
+nnoremap <silent> <Leader>a :Ack 
 " }}}
 " Plugins {{{
 "
@@ -192,6 +194,7 @@ let g:gitgutter_max_signs=1000
 nnoremap <leader>gg :Gitv<CR>
 nnoremap <leader>gf :Gitv!<CR>
 " }}}
+Bundle 'junegunn/vim-github-dashboard'
 " }}}
 " javascript {{{
 Bundle 'jaxbot/brolink.vim'
@@ -254,6 +257,10 @@ Bundle 'pearance/vim-tmux'
 " go {{{
 Bundle 'fatih/vim-go'
 " }}}
+" splunk {{{
+Bundle 'splunk.vim'
+Bundle 'yorokobi/vim-splunk'
+" }}}
 "
 " ide {{{
 " file {{{
@@ -302,8 +309,12 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_jump = 3
 "let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_error_symbol = "✗"
-let g:syntastic_warning_symbol = "⚠"
+let g:syntastic_error_symbol = "ε"
+let g:syntastic_warning_symbol = "ω"
+let g:syntastic_style_error_symbol = "ε"
+let g:syntastic_style_warning_symbol = "ψ"
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_ruby_checkers = ["mri", "rubocop"]
 " }}}
 Bundle 'taglist-plus'
 Bundle 'matchit.zip'
@@ -322,6 +333,7 @@ Plugin 'mhinz/vim-startify'
 Plugin 'joonty/vdebug'
 Bundle 'vim-scripts/dbext.vim'
 Bundle 'utl.vim'
+Bundle 'mileszs/ack.vim'
 "}}}
 " completion {{{
 " ctrlp {{{
