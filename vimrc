@@ -16,7 +16,7 @@ set autoread
 set hidden
 set lazyredraw
 set encoding=utf-8
-set list listchars=tab:∘\ ,trail:∙,extends:→,precedes:←
+set list listchars=tab:۰\ ,trail:∙,extends:→,precedes:←
 set fillchars=fold:\ ,vert:┃,stl:\ ,stlnc:_,diff:─
 set shortmess+=filmnrxoOtT
 set scrolljump=2
@@ -61,8 +61,8 @@ set omnifunc=syntaxcomplete#Complete
 " backup {{{
 set history=1000
 set noswapfile
-set nobackup
-set nowb
+set backup
+set writebackup
 silent !mkdir ~/.vim/backups > /dev/null 2>&1
 set undodir=~/.vim/backups
 set undofile
@@ -125,6 +125,10 @@ nnoremap <silent> <C-k> :bd!<CR>
 nnoremap <silent> <Leader>a :Ack 
 
 nnoremap <Leader>sr :SyntasticCheck rubocop<CR>
+
+" write file, switch to firefox, refresh page, switch back to vim
+nnoremap <silent> <Leader>x :write \| silent !xdotool search --name Firefox windowactivate key F5 search --name vim windowactivate<CR><C-L>
+
 " }}}
 " Plugins {{{
 "
@@ -152,21 +156,22 @@ Bundle 'danchoi/ri.vim'
 nnoremap <LocalLeader>r :call ri#OpenSearchPrompt(1)<CR>
 nnoremap <LocalLeader>k :call ri#LookupNameUnderCursor()<CR>
 Bundle 't9md/vim-ruby-xmpfilter'
-"Bundle 'janx/vim-rubytest'
+Bundle 'janx/vim-rubytest'
 "Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'rhysd/vim-textobj-ruby'
 Bundle 'ecomba/vim-ruby-refactoring'
-" }}}
-" maps {{{
-nnoremap <leader>rap  :RAddParameter<cr>
-nnoremap <leader>rcpc :RConvertPostConditional<cr>
-nnoremap <leader>rel  :RExtractLet<cr>
-vnoremap <leader>rec  :RExtractConstant<cr>
-vnoremap <leader>relv :RExtractLocalVariable<cr>
-nnoremap <leader>rit  :RInlineTemp<cr>
-vnoremap <leader>rrlv :RRenameLocalVariable<cr>
-vnoremap <leader>rriv :RRenameInstanceVariable<cr>
-vnoremap <leader>rem  :RExtractMethod<cr>
+nnoremap <localleader>t  <Plug>RubyTestRun
+nnoremap <localleader>T  <Plug>RubyFileRun
+nnoremap <localleader>\  <Plug>RubyLastRun
+nnoremap <localleader>p  :RAddParameter<cr>
+nnoremap <localleader>c :RConvertPostConditional<cr>
+nnoremap <localleader>rel  :RExtractLet<cr>
+vnoremap <localleader>ec  :RExtractConstant<cr>
+vnoremap <localleader>el :RExtractLocalVariable<cr>
+nnoremap <localleader>i  :RInlineTemp<cr>
+vnoremap <localleader>rl :RRenameLocalVariable<cr>
+vnoremap <localleader>rv :RRenameInstanceVariable<cr>
+vnoremap <localleader>e  :RExtractMethod<cr>
 "}}}
 " autocmds {{{
 autocmd FileType ruby nmap <buffer> <F2> <Plug>(xmpfilter-mark)
@@ -199,19 +204,34 @@ nnoremap <leader>gf :Gitv!<CR>
 Bundle 'junegunn/vim-github-dashboard'
 " }}}
 " javascript {{{
-Bundle 'jaxbot/brolink.vim'
+Bundle 'pangloss/vim-javascript'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'vim-scripts/JavaScript-Indent'
+"Bundle 'jaxbot/brolink.vim'
 "Bundle 'terryma/vim-multiple-cursors'
-Bundle 'othree/javascript-libraries-syntax.vim'
+"Bundle 'othree/javascript-libraries-syntax.vim'
 "Bundle 'jiangmiao/auto-pairs'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'walm/jshint.vim'
+"Bundle 'digitaltoad/vim-jade'
+"Bundle 'walm/jshint.vim'
 Bundle 'jamescarr/snipmate-nodejs'
 "Bundle 'ahayman/vim-nodejs-complete'
-Bundle 'goatslacker/mango.vim'
+"Bundle 'goatslacker/mango.vim'
+Bundle 'marijnh/tern_for_vim'
 
-let g:used_javascript_libs = "angularjs"
+"let g:used_javascript_libs = "angularjs"
+let b:javascript_fold = 1
+let javascript_enable_domhtmlcss = 1
+let g:javascript_conceal_function   = "ƒ"
+let g:javascript_conceal_null       = "∅"
+let g:javascript_conceal_this       = "@"
+let g:javascript_conceal_return     = "←"
+let g:javascript_conceal_undefined  = "¿"
+let g:javascript_conceal_NaN        = "ℕ"
+let g:javascript_conceal_prototype  = "∬"
+let g:javascript_conceal_static     = "•"
+let g:javascript_conceal_super      = "Ω"
 
-autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 noexpandtab
+autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 noexpandtab nolist omnifunc=tern#Complete
 "}}}
 " html {{{
 Bundle 'sorin-ionescu/vim-htmlvalidator'
@@ -350,6 +370,8 @@ Bundle 'ervandew/supertab'
 Bundle 'Shougo/neocomplete'
 Bundle 'Shougo/neosnippet'
 Bundle 'Shougo/neosnippet-snippets'
+Bundle 'Shougo/echodoc.vim'
+"Bundle 'Valloric/YouCompleteMe'
 "}}}
 " unite {{{
 Bundle 'Shougo/unite.vim'
@@ -508,7 +530,6 @@ Bundle 'marklar.vim'
 Bundle 'tomasr/molokai'
 Bundle 'romainl/Apprentice'
 Bundle 'jnurmine/Zenburn'
-Bundle 'kien/rainbow_parentheses.vim'
 "Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
 Bundle 'NLKNguyen/papercolor-theme'
@@ -532,7 +553,7 @@ let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'startify', 'man']
 let g:indent_guides_guide_size = 1
-let g:indent_guides_start_level = 2
+let g:indent_guides_start_level = 3
 " }}}
 " dwm.vim {{{
 let g:dwm_map_keys=0
