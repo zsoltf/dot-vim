@@ -61,8 +61,7 @@ set omnifunc=syntaxcomplete#Complete
 " backup {{{
 set history=1000
 set noswapfile
-set backup
-set writebackup
+set nobackup
 silent !mkdir ~/.vim/backups > /dev/null 2>&1
 set undodir=~/.vim/backups
 set undofile
@@ -279,6 +278,10 @@ Bundle 'pearance/vim-tmux'
 " go {{{
 Bundle 'fatih/vim-go'
 " }}}
+" salt {{{
+Bundle 'stephpy/vim-yaml'
+Bundle 'saltstack/salt-vim'
+" }}}
 " splunk {{{
 Bundle 'splunk.vim'
 Bundle 'yorokobi/vim-splunk'
@@ -372,6 +375,7 @@ Bundle 'Shougo/neosnippet'
 Bundle 'Shougo/neosnippet-snippets'
 Bundle 'Shougo/echodoc.vim'
 "Bundle 'Valloric/YouCompleteMe'
+Bundle 'Konfekt/FastFold'
 "}}}
 " unite {{{
 Bundle 'Shougo/unite.vim'
